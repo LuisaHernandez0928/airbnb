@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SearchParameter } from "../searchParameter";
 import { ModalSearchBar } from "../modalSearchBar";
-import { Donde } from "../dondeHeader/dondeHeader";
+import { Donde } from "../dondeHeader";
 import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 
