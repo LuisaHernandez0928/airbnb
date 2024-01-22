@@ -7,14 +7,14 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 8px 14px ;
+  padding: 8px 14px;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border: 1px solid rgb(184, 180, 180);
   position: relative;
 }
 
-.parameterContainer{
+.parameterContainer {
   width: 90%;
   height: 100%;
   display: flex;
@@ -35,4 +35,20 @@
   border-radius: 50%;
   border: none;
   color: white;
+}
+
+.dondeParam {
+  background-color: #ff385c;
+}
+
+.llegadaParam {
+  background-color: #24be9d;
+}
+
+.salidaParam {
+  background-color: #f1dc16;
+}
+
+.quienParam {
+  background-color: #7211f1;
 }

@@ -12,6 +12,20 @@ function Header() {
     setSelected(!selected);
     setModalContent(identificador);
   };
+
+  const viewParameter = (modalContent) => {
+    if (modalContent === "Dónde") {
+      return <div className={styles.dondeParam}>{modalContent}</div>;
+    } else if (modalContent === "Llegada") {
+      return <div className={styles.llegadaParam}>{modalContent}</div>;
+    } else if (modalContent === "Salida") {
+      return <div className={styles.salidaParam}>{modalContent}</div>;
+    } else if (modalContent === "Quién") {
+      return <div className={styles.quienParam}>{modalContent}</div>;
+    }
+  };
+
+
   return (
     <div className={styles.searchBar}>
       <div className={styles.parameterContainer}>
@@ -41,7 +55,11 @@ function Header() {
           <SearchIcon></SearchIcon>
         </div>
       </button>
-      {selected ? <ModalSearchBar typeParameter={modalContent}/> : <></>}
+      {selected ? (
+        <ModalSearchBar typeParameter={modalContent} pepe={viewParameter} />
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
