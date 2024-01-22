@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styles from "./index.module.css";
 import { SearchParameter } from "../searchParameter";
 import { ModalSearchBar } from "../modalSearchBar";
+import { Title } from "../title";
+import { LatestSearch } from "../latestSearch";
+import { RegionSearch } from "../regionSearch";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Header() {
@@ -15,7 +18,24 @@ function Header() {
 
   const viewParameter = (modalContent) => {
     if (modalContent === "Dónde") {
-      return <div className={styles.dondeParam}>{modalContent}</div>;
+      return (
+        <div className={styles.dondeParam}>
+          <div className={styles.busquedaReciente}>
+            <Title text={"Busquedas recientes"} />
+            <LatestSearch />
+          </div>
+          <div className={styles.busquedaRegion}>
+            {" "}
+            <Title text={"Busqueda por region"} />
+            <RegionSearch location={"Busqueda flexible"} />
+            <RegionSearch location={"Colombia"} />
+            <RegionSearch location={"Europa"} />
+            <RegionSearch location={"Mexico"} />
+            <RegionSearch location={"EstadosUnidos"} />
+            <RegionSearch location={"España"} />
+          </div>
+        </div>
+      );
     } else if (modalContent === "Llegada") {
       return <div className={styles.llegadaParam}>{modalContent}</div>;
     } else if (modalContent === "Salida") {
@@ -24,7 +44,6 @@ function Header() {
       return <div className={styles.quienParam}>{modalContent}</div>;
     }
   };
-
 
   return (
     <div className={styles.searchBar}>
