@@ -25,7 +25,6 @@ function Header() {
             <LatestSearch />
           </div>
           <div className={styles.busquedaRegion}>
-            {" "}
             <Title text={"Busqueda por region"} />
             <RegionSearch location={"Busqueda flexible"} />
             <RegionSearch location={"Colombia"} />
