@@ -1,0 +1,60 @@
+{
+  "1": {
+    "pics": [""],
+    "description": "Lorem impsum",
+    "guestsFavorite": true,
+    "score": 4.5,
+    "numReviews": 54,
+    "beds": 1,
+    "rooms": 1,
+    "peopleCapacity": 2,
+    "baths": 1,
+    "bathKind": "private",
+    "tipoAlojamiento": "apt",
+    "tipoPropiedad": "hotel",
+    "services": [
+      {
+        "name": "Wifi",
+        "value": true
+      },
+      {
+        "name": "Kitchen",
+        "value": true
+      }
+    ],
+    "bookingOptions": [
+      {
+        "name": "Autonomous checking",
+        "value": true
+      },
+      {
+        "name": "Pets",
+        "value": true
+      }
+    ],
+    "location": {
+      "continent": "Europe",
+      "country": "France",
+      "city": "Paris",
+      "state": "Paris",
+      "neighborhood": "Montmortre",
+      "lat": 48.857338746327684,
+      "long": 2.35699628099439,
+      "description": "string"
+    },
+    "availability": [
+      {
+        "date": "2024-10-22",
+        "price": 20
+      },
+      {
+        "date": "2024-10-23",
+        "price": 20
+      },
+      {
+        "date": "2024-10-24",
+        "price": 22
+      }
+    ]
+  }
+}
