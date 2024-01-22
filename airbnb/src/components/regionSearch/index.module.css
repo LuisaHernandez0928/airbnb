@@ -1,0 +1,13 @@
+.cardRegion {
+  width: 85px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+.mapaRegion{
+ width: 85px;
+ height: 85px;
+ border-radius: 16px;
+}
