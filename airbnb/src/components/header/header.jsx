@@ -5,14 +5,38 @@ import { Donde } from "../dondeHeader";
 import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Header() {
+function Header({notifyParameters, recentSearches}) {
   const [selected, setSelected] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [location, setLocation] = useState("");
+  const [llegada, setLlegada] = useState("Cualquiera");
+  const [salida, setsalida] = useState("Cualquiera");
+  const [quienes, setQuienes] = useState({});
+
+  const reportParameters = () =>{
+    let parameters = {
+      location :  location,
+      llegada: llegada,
+      salida: salida,
+      quienes: {
+        adultos: quienes.adults,
+        niños: quienes.childs,
+        bebes: quienes.babies,
+        mascotas: quienes.pets,
+      }
+    }
+    notifyParameters(parameters);
+  }
 
   const notifyClick = (identificador) => {
     setSelected(!selected);
     setModalContent(identificador);
   };
+
+  const notifyLocation = (locationSearched) => {
+    setLocation(locationSearched);
+    console.log(locationSearched);
+  }
 
   const viewParameter = (modalContent) => {
     if (modalContent === "Dónde") {
@@ -26,6 +50,11 @@ function Header() {
     }
   };
 
+  const handleSearch = () => {
+    console.log('here');
+    reportParameters();
+  };
+
   return (
     <div className={styles.searchBar}>
       <div className={styles.parameterContainer}>
@@ -33,6 +62,8 @@ function Header() {
           title={"Dónde"}
           subtitle={"Explora destinos"}
           itemSelected={notifyClick}
+          notifyLocation={notifyLocation}
+          isInput
         />
         <SearchParameter
           title={"Llegada"}
@@ -50,7 +81,7 @@ function Header() {
           itemSelected={notifyClick}
         />
       </div>
-      <button className={styles.searchButton}>
+      <button onClick={() => handleSearch()} className={styles.searchButton}>
         <div>
           <SearchIcon></SearchIcon>
         </div>
