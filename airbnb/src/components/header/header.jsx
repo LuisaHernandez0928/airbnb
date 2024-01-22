@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import styles from "./index.module.css";
 import { SearchParameter } from "../searchParameter";
 import { ModalSearchBar } from "../modalSearchBar";
-import { Title } from "../title";
-import { LatestSearch } from "../latestSearch";
-import { RegionSearch } from "../regionSearch";
+import { Donde } from "../dondeHeader/dondeHeader";
+import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Header() {
@@ -18,25 +16,7 @@ function Header() {
 
   const viewParameter = (modalContent) => {
     if (modalContent === "Dónde") {
-      return (
-        <div className={styles.dondeParam}>
-          <div className={styles.busquedaReciente}>
-            <Title text={"Busquedas recientes"} />
-            <LatestSearch />
-          </div>
-          <div className={styles.busquedaRegion}>
-            <Title text={"Busqueda por region"} />
-            <div className={styles.cardsGrid}>
-              <RegionSearch location={"Busqueda flexible"} />
-              <RegionSearch location={"Colombia"} />
-              <RegionSearch location={"Europa"} />
-              <RegionSearch location={"Mexico"} />
-              <RegionSearch location={"EstadosUnidos"} />
-              <RegionSearch location={"España"} />
-            </div>
-          </div>
-        </div>
-      );
+      return <Donde />
     } else if (modalContent === "Llegada") {
       return <div className={styles.llegadaParam}>{modalContent}</div>;
     } else if (modalContent === "Salida") {
