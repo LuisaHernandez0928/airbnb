@@ -26,12 +26,14 @@ function Header() {
           </div>
           <div className={styles.busquedaRegion}>
             <Title text={"Busqueda por region"} />
-            <RegionSearch location={"Busqueda flexible"} />
-            <RegionSearch location={"Colombia"} />
-            <RegionSearch location={"Europa"} />
-            <RegionSearch location={"Mexico"} />
-            <RegionSearch location={"EstadosUnidos"} />
-            <RegionSearch location={"España"} />
+            <div className={styles.cardsGrid}>
+              <RegionSearch location={"Busqueda flexible"} />
+              <RegionSearch location={"Colombia"} />
+              <RegionSearch location={"Europa"} />
+              <RegionSearch location={"Mexico"} />
+              <RegionSearch location={"EstadosUnidos"} />
+              <RegionSearch location={"España"} />
+            </div>
           </div>
         </div>
       );
