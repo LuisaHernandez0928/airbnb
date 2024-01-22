@@ -1,3 +1,5 @@
+import { Subtitle } from "../subtitle";
+import { Title } from "../title";
 import styles from "./index.module.css";
 
 function SearchParameter({ title, subtitle, itemSelected }) {
@@ -8,8 +10,8 @@ function SearchParameter({ title, subtitle, itemSelected }) {
 
   return (
     <div className={styles.boxSeparator} onClick={() => notifySelected(title)}>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.subtitle}>{subtitle}</div>      
+      <Title text={title} />
+      <Subtitle text={subtitle} />     
     </div>
   );
 }
