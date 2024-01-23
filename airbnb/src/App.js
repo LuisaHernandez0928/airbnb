@@ -8,6 +8,15 @@ const DataOfRecentSearch = data ? JSON.parse(data) : [];
 
 function App() {
   const [recentSearches, setRecentSearches] = useState(DataOfRecentSearch);
+  const [headerModalShouldBeClosed, setHeaderModalShouldBeClosed] = useState(false);
+
+  const notifyModalOpened = () => {
+    setHeaderModalShouldBeClosed(false);
+  };
+
+  const closeModal = () => {
+    setHeaderModalShouldBeClosed(true);
+  };
 
   const notifyParameters = (parameters) => {
     DataOfRecentSearch.push(parameters);
@@ -16,9 +25,9 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" onClick={() => closeModal()}>
       Hola mundo
-      <Header recentSearches={recentSearches} notifyParameters={notifyParameters} />
+      <Header notifyModalOpened={notifyModalOpened} shouldBeClosed={headerModalShouldBeClosed} recentSearches={recentSearches} notifyParameters={notifyParameters} />
     </div>
   );
 }

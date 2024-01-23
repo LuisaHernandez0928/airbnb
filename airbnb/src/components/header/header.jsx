@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchParameter } from "../searchParameter";
 import { ModalSearchBar } from "../modalSearchBar";
 import { Donde } from "../dondeHeader";
@@ -6,13 +6,17 @@ import {DestinationFinder} from "../destinationFinder";
 import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Header({notifyParameters, recentSearches}) {
+function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOpened}) {
   const [selected, setSelected] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [location, setLocation] = useState("");
   const [llegada, setLlegada] = useState("Cualquiera");
   const [salida, setsalida] = useState("Cualquiera");
   const [quienes, setQuienes] = useState({});
+
+  useEffect(() => {
+    if (shouldBeClosed === true) setSelected(false);
+  }, [shouldBeClosed]);
 
   const cities = [
     "New York",
@@ -52,7 +56,8 @@ function Header({notifyParameters, recentSearches}) {
   }
 
   const notifyClick = (identificador) => {
-    setSelected(!selected);
+    setSelected(true);
+    notifyModalOpened();
     setModalContent(identificador);
   };
 
@@ -61,17 +66,24 @@ function Header({notifyParameters, recentSearches}) {
   }
 
   const viewParameter = (modalContent) => {
+    console.log("qué pasa1");
     if (modalContent === "Dónde" && location ==="") {
+      console.log("qué pasa2");
       return <Donde data={recentSearches}/>
-    }else if(!(location === "")){
+    }else if(!(location===" ")){
       console.log("entro here")
-      return <DestinationFinder destinationOptions={cities} destinationSearched={location}/>
+      return <DestinationFinder destinationOptions={cities} destinationSearched={location} notifyLocation={notifyLocation}/>
     } else if (modalContent === "Llegada") {
+      console.log("qué pasa3");
       return <div className={styles.llegadaParam}>{modalContent}</div>;
     } else if (modalContent === "Salida") {
+      console.log("qué pasa4");
       return <div className={styles.salidaParam}>{modalContent}</div>;
     } else if (modalContent === "Quién") {
+      console.log("qué pasa1");
       return <div className={styles.quienParam}>{modalContent}</div>;
+    }else if(location){
+      console.log("qué pasa5");
     }
   };
 
@@ -81,7 +93,7 @@ function Header({notifyParameters, recentSearches}) {
   };
 
   return (
-    <div className={styles.searchBar}>
+    <div className={styles.searchBar} onClick={(e) => e.stopPropagation()}>
       <div className={styles.parameterContainer}>
         <SearchParameter
           title={"Dónde"}

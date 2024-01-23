@@ -2,7 +2,8 @@ import { BodyFont } from "../bodyFont/bodyFont";
 import styles from "./index.module.css";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-function DestinationFinder({ destinationOptions, destinationSearched }) {
+function DestinationFinder({ destinationOptions, destinationSearched, notifyLocation}) {
+
   const findLocation = (location, locations) => {
     if (!location || location === "") {
       // location sea undefined o null o ""
@@ -44,12 +45,17 @@ function DestinationFinder({ destinationOptions, destinationSearched }) {
     */
     arr.sort((a, b) => b.points - a.points);
     return arr.map((el) => (
-      <div className={styles.destinationCard}>
+      <div className={styles.destinationCard} onClick={(e) => selectedDestination(e)}>
         <div className={styles.icon}><LocationOnOutlinedIcon sx={{ fontSize: 28}}/></div>
         <div className={styles.destination}> <BodyFont text={el.name} use={"search"}/></div>
       </div>
     ));
   };
+
+  const selectedDestination =(e) =>{
+    console.log(e.target.innerText);
+    notifyLocation(e.target.innerText);
+  }
   const found = findLocation(destinationSearched, destinationOptions);
 
   return <div className={styles.destitationContainer}>{found}</div>;
