@@ -35,7 +35,6 @@ function Header({notifyParameters, recentSearches}) {
 
   const notifyLocation = (locationSearched) => {
     setLocation(locationSearched);
-    console.log(locationSearched[0].location);
   }
 
   const viewParameter = (modalContent) => {
