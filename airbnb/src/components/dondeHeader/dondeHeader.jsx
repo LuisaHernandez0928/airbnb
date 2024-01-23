@@ -3,12 +3,12 @@ import { Title } from "../title";
 import { LatestSearch } from "../latestSearch";
 import { RegionSearch } from "../regionSearch";
 
-function Donde() {
+function Donde({data}) {
   return (
       <div className={styles.dondeParam}>
         <div className={styles.busquedaReciente}>
           <Title text={"Busquedas recientes"} />
-          <LatestSearch />
+          <LatestSearch data={data} />
         </div>
         <div className={styles.busquedaRegion}>
           <Title text={"Busqueda por region"} />

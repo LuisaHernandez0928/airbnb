@@ -35,12 +35,12 @@ function Header({notifyParameters, recentSearches}) {
 
   const notifyLocation = (locationSearched) => {
     setLocation(locationSearched);
-    console.log(locationSearched);
+    console.log(locationSearched[0].location);
   }
 
   const viewParameter = (modalContent) => {
     if (modalContent === "Dónde") {
-      return <Donde />
+      return <Donde data={recentSearches}/>
     } else if (modalContent === "Llegada") {
       return <div className={styles.llegadaParam}>{modalContent}</div>;
     } else if (modalContent === "Salida") {
