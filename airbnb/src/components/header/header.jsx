@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SearchParameter } from "../searchParameter";
 import { ModalSearchBar } from "../modalSearchBar";
 import { Donde } from "../dondeHeader";
+import {DestinationFinder} from "../destinationFinder";
 import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -12,6 +13,28 @@ function Header({notifyParameters, recentSearches}) {
   const [llegada, setLlegada] = useState("Cualquiera");
   const [salida, setsalida] = useState("Cualquiera");
   const [quienes, setQuienes] = useState({});
+
+  const cities = [
+    "New York",
+    "Yorkshire",
+    "York",
+    "Washington",
+    "Maine",
+    "Nevada",
+    "Central",
+    "Colorado",
+    "Cupertino",
+    "Arizona",
+    "Barbados",
+    "Dallas",
+    "Jersey",
+    "Luisiana",
+    "Colombia",
+    "La habana",
+    "Haiti",
+    "huila",
+  ];
+
 
   const reportParameters = () =>{
     let parameters = {
@@ -38,8 +61,11 @@ function Header({notifyParameters, recentSearches}) {
   }
 
   const viewParameter = (modalContent) => {
-    if (modalContent === "Dónde") {
+    if (modalContent === "Dónde" && location ==="") {
       return <Donde data={recentSearches}/>
+    }else if(!(location === "")){
+      console.log("entro here")
+      return <DestinationFinder destinationOptions={cities} destinationSearched={location}/>
     } else if (modalContent === "Llegada") {
       return <div className={styles.llegadaParam}>{modalContent}</div>;
     } else if (modalContent === "Salida") {
@@ -86,7 +112,7 @@ function Header({notifyParameters, recentSearches}) {
         </div>
       </button>
       {selected ? (
-        <ModalSearchBar typeParameter={modalContent} pepe={viewParameter} />
+        <ModalSearchBar typeParameter={modalContent} showParameterInfo={viewParameter} destinationSearch={location} />
       ) : (
         <></>
       )}
