@@ -14,7 +14,7 @@ function App() {
     localStorage.setItem("recentSearches", JSON.stringify(DataOfRecentSearch));
     setRecentSearches(JSON.parse(JSON.stringify(DataOfRecentSearch)));
   };
-    console.log(recentSearches[0].location);
+
   return (
     <div className="App">
       Hola mundo

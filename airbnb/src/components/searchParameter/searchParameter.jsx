@@ -35,7 +35,7 @@ function SearchParameter({
   const locationSearched = (e) => {
     notifyLocation(e.target.value ?? "");
     const found = findLocation(e.target.value, cities);
-    console.log(found);
+    return found;
   };
 
   const findLocation = (location, locations) => {
