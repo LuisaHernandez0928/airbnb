@@ -8,7 +8,8 @@ const DataOfRecentSearch = data ? JSON.parse(data) : [];
 
 function App() {
   const [recentSearches, setRecentSearches] = useState(DataOfRecentSearch);
-  const [headerModalShouldBeClosed, setHeaderModalShouldBeClosed] = useState(false);
+  const [headerModalShouldBeClosed, setHeaderModalShouldBeClosed] =
+    useState(false);
 
   const notifyModalOpened = () => {
     setHeaderModalShouldBeClosed(false);
@@ -18,8 +19,15 @@ function App() {
     setHeaderModalShouldBeClosed(true);
   };
 
+  const removeOldDestination = (newDestination) => {
+    DataOfRecentSearch.shift();
+    DataOfRecentSearch.push(newDestination);
+  };
+
   const notifyParameters = (parameters) => {
-    DataOfRecentSearch.push(parameters);
+    DataOfRecentSearch.length <= 4
+      ? DataOfRecentSearch.push(parameters)
+      : removeOldDestination(parameters);
     localStorage.setItem("recentSearches", JSON.stringify(DataOfRecentSearch));
     setRecentSearches(JSON.parse(JSON.stringify(DataOfRecentSearch)));
   };
@@ -27,7 +35,12 @@ function App() {
   return (
     <div className="App" onClick={() => closeModal()}>
       Hola mundo
-      <Header notifyModalOpened={notifyModalOpened} shouldBeClosed={headerModalShouldBeClosed} recentSearches={recentSearches} notifyParameters={notifyParameters} />
+      <Header
+        notifyModalOpened={notifyModalOpened}
+        shouldBeClosed={headerModalShouldBeClosed}
+        recentSearches={recentSearches}
+        notifyParameters={notifyParameters}
+      />
     </div>
   );
 }

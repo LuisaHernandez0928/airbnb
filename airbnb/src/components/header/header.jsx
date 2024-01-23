@@ -52,7 +52,7 @@ function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOp
         mascotas: quienes.pets,
       }
     }
-    notifyParameters(parameters);
+    parameters?.location? notifyParameters(parameters): console.log("no") ;
   }
 
   const notifyClick = (identificador) => {
@@ -88,7 +88,6 @@ function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOp
   };
 
   const handleSearch = () => {
-    console.log('here');
     reportParameters();
   };
 
