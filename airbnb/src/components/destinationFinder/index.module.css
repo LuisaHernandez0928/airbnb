@@ -24,19 +24,20 @@
 }
 
 .destinationCard:hover {
-  background-color: rgb(241, 241, 235);
+  background-color: #DDDDDD;
 }
 
 .icon {
   display: flex;
   flex-direction: column;
-  background-color: rgb(209, 209, 206);
+  background-color: #EBEBEB;
   width: 50px;
   height: 50px;
   border-radius: 16px;
   margin: 10px 5px;
   justify-content: center;
   align-items: center;
+  color: #222222;
 }
 
 .destination {

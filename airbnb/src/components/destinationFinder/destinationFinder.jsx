@@ -1,6 +1,6 @@
-import { Subtitle } from "../subtitle";
+import { BodyFont } from "../bodyFont/bodyFont";
 import styles from "./index.module.css";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 function DestinationFinder({ destinationOptions, destinationSearched }) {
   const findLocation = (location, locations) => {
@@ -45,8 +45,8 @@ function DestinationFinder({ destinationOptions, destinationSearched }) {
     arr.sort((a, b) => b.points - a.points);
     return arr.map((el) => (
       <div className={styles.destinationCard}>
-        <div className={styles.icon}><LocationOnIcon/></div>
-        <div className={styles.destination}> <Subtitle text={el.name}/></div>
+        <div className={styles.icon}><LocationOnOutlinedIcon sx={{ fontSize: 28}}/></div>
+        <div className={styles.destination}> <BodyFont text={el.name} use={"search"}/></div>
       </div>
     ));
   };
