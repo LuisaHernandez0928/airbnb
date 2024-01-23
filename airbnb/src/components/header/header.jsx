@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import { SearchParameter } from "../searchParameter";
 import { ModalSearchBar } from "../modalSearchBar";
 import { Donde } from "../dondeHeader";
-import {DestinationFinder} from "../destinationFinder";
+import { DestinationFinder } from "../destinationFinder";
 import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOpened}) {
+function Header({
+  notifyParameters,
+  recentSearches,
+  shouldBeClosed,
+  notifyModalOpened,
+}) {
   const [selected, setSelected] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [location, setLocation] = useState("");
@@ -39,10 +44,9 @@ function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOp
     "huila",
   ];
 
-
-  const reportParameters = () =>{
+  const reportParameters = () => {
     let parameters = {
-      location :  location,
+      location: location,
       llegada: llegada,
       salida: salida,
       quienes: {
@@ -50,10 +54,10 @@ function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOp
         niños: quienes.childs,
         bebes: quienes.babies,
         mascotas: quienes.pets,
-      }
-    }
-    parameters?.location? notifyParameters(parameters): console.log("no") ;
-  }
+      },
+    };
+    parameters?.location ? notifyParameters(parameters) : console.log("no");
+  };
 
   const notifyClick = (identificador) => {
     setSelected(true);
@@ -63,27 +67,27 @@ function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOp
 
   const notifyLocation = (locationSearched) => {
     setLocation(locationSearched);
-  }
+    console.log("padre sabe: " + locationSearched);
+  };
 
   const viewParameter = (modalContent) => {
-    console.log("qué pasa1");
-    if (modalContent === "Dónde" && location ==="") {
-      console.log("qué pasa2");
-      return <Donde data={recentSearches}/>
-    }else if(!(location===" ")){
-      console.log("entro here")
-      return <DestinationFinder destinationOptions={cities} destinationSearched={location} notifyLocation={notifyLocation}/>
+    if (modalContent === "Dónde" && location === "") {
+      return <Donde data={recentSearches} />;
     } else if (modalContent === "Llegada") {
-      console.log("qué pasa3");
+      console.log(modalContent);
       return <div className={styles.llegadaParam}>{modalContent}</div>;
     } else if (modalContent === "Salida") {
-      console.log("qué pasa4");
       return <div className={styles.salidaParam}>{modalContent}</div>;
     } else if (modalContent === "Quién") {
-      console.log("qué pasa1");
       return <div className={styles.quienParam}>{modalContent}</div>;
-    }else if(location){
-      console.log("qué pasa5");
+    } else if (!(location === " ")) {
+      return (
+        <DestinationFinder
+          destinationOptions={cities}
+          destinationSearched={location}
+          notifyLocation={notifyLocation}
+        />
+      );
     }
   };
 
@@ -123,7 +127,11 @@ function Header({notifyParameters, recentSearches, shouldBeClosed, notifyModalOp
         </div>
       </button>
       {selected ? (
-        <ModalSearchBar typeParameter={modalContent} showParameterInfo={viewParameter} destinationSearch={location} />
+        <ModalSearchBar
+          typeParameter={modalContent}
+          showParameterInfo={viewParameter}
+          destinationSearch={location}
+        />
       ) : (
         <></>
       )}
