@@ -5,6 +5,9 @@ import { Donde } from "../dondeHeader";
 import { DestinationFinder } from "../destinationFinder";
 import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
+import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 function Header({
   notifyParameters,
@@ -67,7 +70,6 @@ function Header({
 
   const notifyLocation = (locationSearched) => {
     setLocation(locationSearched);
-    console.log("padre sabe: " + locationSearched);
   };
 
   const viewParameter = (modalContent) => {
@@ -75,7 +77,13 @@ function Header({
       return <Donde data={recentSearches} />;
     } else if (modalContent === "Llegada") {
       console.log(modalContent);
-      return <div className={styles.llegadaParam}>{modalContent}</div>;
+      return (
+        <div className={styles.llegadaParam}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateCalendar disablePast monthsPerRow={2} />
+          </LocalizationProvider>
+        </div>
+      );
     } else if (modalContent === "Salida") {
       return <div className={styles.salidaParam}>{modalContent}</div>;
     } else if (modalContent === "Quién") {

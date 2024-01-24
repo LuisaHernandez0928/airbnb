@@ -16,3 +16,22 @@ body,html, #root {
   font-weight: 400;
   color: #717171;
 }
+
+.Mui-disabled {
+  color: green !important;
+}
+
+
+.MuiDateCalendar-root {
+  width: calc(calc(50px * 7) + 68px) !important;
+}
+
+.MuiDayCalendar-weekDayLabel {
+  width: 50px !important;
+  min-width: 50px !important;
+}
+
+.MuiPickersDay-root {
+  width: 50px !important;
+  height: 50px !important;
+}

@@ -16,7 +16,7 @@ function DestinationFinder({
     // estamos seguros de que ni es null ni es ""
 
     // ejemplo, location = "la h"
-    const locationWords = location.split(" "); // locationWords: ["la", "h"]
+    const locationWords = location.split(""); // locationWords: ["la", "h"]
     const foundCities = {}; // foundCities: {}
     locationWords.forEach((word) => {
       // word: "la" ... "h"
