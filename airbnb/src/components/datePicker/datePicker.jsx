@@ -8,10 +8,12 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { DateRangeCalendar } from "@mui/x-date-pickers-pro/DateRangeCalendar";
-// import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import dayjs from "dayjs";
 
 /*
+<div style={{ cursor: "pointer" }}>
+        <NavigateBeforeIcon onClick={() => backMonth()} />
+      </div>
 <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar
           key={"first-" + valueFirstCalendar.month()}
@@ -34,6 +36,9 @@ import dayjs from "dayjs";
           views={["day"]}
         />
       </LocalizationProvider>
+      <div style={{ cursor: "pointer" }}>
+        <NavigateNextIcon onClick={() => nextMonth()} />
+      </div>
 */
 
 function DatePicker() {
@@ -87,18 +92,10 @@ function DatePicker() {
 
   return (
     <div className={styles.calendarContainer}>
-      <div style={{ cursor: "pointer" }}>
-        <NavigateBeforeIcon onClick={() => backMonth()} />
-      </div>
-
       <div ref={ref}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DateRangeCalendar />
         </LocalizationProvider>
-      </div>
-
-      <div style={{ cursor: "pointer" }}>
-        <NavigateNextIcon onClick={() => nextMonth()} />
       </div>
     </div>
   );
