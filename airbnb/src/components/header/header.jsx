@@ -5,9 +5,7 @@ import { Donde } from "../dondeHeader";
 import { DestinationFinder } from "../destinationFinder";
 import styles from "./index.module.css";
 import SearchIcon from "@mui/icons-material/Search";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DatePicker } from "../datePicker";
 
 function Header({
   notifyParameters,
@@ -79,9 +77,7 @@ function Header({
       console.log(modalContent);
       return (
         <div className={styles.llegadaParam}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateCalendar disablePast monthsPerRow={2} />
-          </LocalizationProvider>
+          <DatePicker />
         </div>
       );
     } else if (modalContent === "Salida") {
