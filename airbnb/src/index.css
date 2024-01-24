@@ -17,8 +17,13 @@ body,html, #root {
   color: #717171;
 }
 
-.MuiPickersArrowSwitcher-button {
- display: none !important;
+
+.MuiButtonBase{
+ background-color: aqua !important;
+}
+
+.MuiPickersDay{
+background-color: rgb(116, 16, 77) !important;
 }
 
 /*.Mui-disabled {
