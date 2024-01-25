@@ -2,9 +2,11 @@ import "./App.css";
 
 import { useState } from "react";
 import { Header } from "./components/header/header";
+import { FilterBar } from "./components/filterBar";
+import data from './data.json';
 
-const data = localStorage.getItem("recentSearches");
-const DataOfRecentSearch = data ? JSON.parse(data) : [];
+const dataLocal = localStorage.getItem("recentSearches");
+const DataOfRecentSearch = dataLocal ? JSON.parse(dataLocal) : [];
 
 function App() {
   const [recentSearches, setRecentSearches] = useState(DataOfRecentSearch);
@@ -41,6 +43,7 @@ function App() {
         recentSearches={recentSearches}
         notifyParameters={notifyParameters}
       />
+    <FilterBar data={data} />
     </div>
   );
 }

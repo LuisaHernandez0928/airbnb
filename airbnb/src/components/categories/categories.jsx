@@ -1,9 +1,9 @@
 import styles from './index.module.css'
 
-function Categories({notifySelection}) {
+function Categories({image, name, notifySelection}) {
   return (<div className={styles.categoryContainer}>
-    <div>Imagen</div>
-    <div>Nombre</div>
+    <img className={styles.image} src={image} alt={name}/>
+    <div>{name}</div>
   </div>)
 }
 
