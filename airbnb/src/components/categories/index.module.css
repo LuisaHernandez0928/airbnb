@@ -3,12 +3,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 76px;
+  width: fit-content;
   height: 56px;
-  margin: 16px;
+  margin: 12px;
+  padding: 4px;
+  color: #717171;
+
+}
+
+.categoryContainer:hover{
+  color: #717171;
+  border-bottom: 2px solid #717171;
 }
 
 .image{
   width: 24px;
   height: 24px;
+}
+
+.selectedStyle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 56px;
+  margin: 12px;
+  padding: 4px;
+  color: black !important;
+  border-bottom: 2px solid black;
 }

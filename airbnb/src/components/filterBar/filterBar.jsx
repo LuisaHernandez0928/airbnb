@@ -3,6 +3,7 @@ import { Categories } from "../categories";
 import { Filters } from "../filters/filters";
 import styles from "./index.module.css";
 
+
 function FilterBar({ data }) {
   const [selectedCategory, setSelectedCategory] = useState("");
 
