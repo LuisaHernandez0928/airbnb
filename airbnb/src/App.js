@@ -3,7 +3,8 @@ import "./App.css";
 import { useState } from "react";
 import { Header } from "./components/header/header";
 import { FilterBar } from "./components/filterBar";
-import data from './data.json';
+import data from "./data.json";
+import { PriceFormatter } from "./components/priceFormatter";
 
 const dataLocal = localStorage.getItem("recentSearches");
 const DataOfRecentSearch = dataLocal ? JSON.parse(dataLocal) : [];
@@ -43,7 +44,9 @@ function App() {
         recentSearches={recentSearches}
         notifyParameters={notifyParameters}
       />
-    <FilterBar data={data} />
+      <FilterBar data={data} />
+      <PriceFormatter priceUSD={80000 / 12} currency={"COP"} />
+      <PriceFormatter priceUSD={80000 / 12} currency={"MX"} />
     </div>
   );
 }
