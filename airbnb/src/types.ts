@@ -11,7 +11,7 @@ interface BookingOption {
 };
 
 interface AvailableNight {
-  date: string;
+  date: string[];
   price: number;
 };
 

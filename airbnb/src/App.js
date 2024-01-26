@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Header } from "./components/header/header";
 import { FilterBar } from "./components/filterBar";
 import data from "./data.json";
-import { Card } from "./components/card/";
 
 
 const dataLocal = localStorage.getItem("recentSearches");
@@ -46,7 +45,6 @@ function App() {
         notifyParameters={notifyParameters}
       />
       <FilterBar data={data} />
-      <Card />
     </div>
   );
 }
