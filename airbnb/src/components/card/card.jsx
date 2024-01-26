@@ -4,8 +4,14 @@ import { Subtitle } from "../subtitle";
 import { PriceFormatter } from "../priceFormatter/priceFormatter";
 import styles from "./index.module.css";
 import { AwardTag } from "../awardTag";
+import { Carousel } from "../carrousel/carrousel";
 
 function Card({ notifySelection }) {
+  const images = [
+    "https://a0.muscache.com/im/pictures/airflow/Hosting-9955014/original/ee3441a2-0b6f-4e69-898e-972cca5d9906.jpg?im_w=960",
+    "https://a0.muscache.com/im/pictures/31fb1db6-ad71-4e4c-84e1-485eeffe4cb9.jpg?im_w=720",
+    "https://a0.muscache.com/im/pictures/miso/Hosting-9955014/original/544e4627-b7b7-450e-93c3-3e500206e7f6.jpeg?im_w=720",
+  ];
   return (
     <div className={styles.cardContainer}>
       <div className={styles.image}>
@@ -31,10 +37,7 @@ function Card({ notifySelection }) {
           </svg>
         </div>
 
-        <img
-          src="https://a0.muscache.com/im/pictures/31fb1db6-ad71-4e4c-84e1-485eeffe4cb9.jpg?im_w=720"
-          alt="La calera"
-        />
+        <Carousel images={images} />
       </div>
       <div className={styles.headerInfo}>
         <Title text={"La Calera, Colombia"} />
