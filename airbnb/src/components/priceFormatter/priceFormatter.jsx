@@ -32,10 +32,10 @@ function PriceFormatter({ priceUSD, currency }) {
   const valueFormatted = formatValue(valueConverted);
 
   return (
-    <span className={styles.priceStyle}>
+    <div className={styles.priceStyle}>
       <Title text={"$" + valueFormatted + " " + currency} />
       <Noche />
-    </span>
+    </div>
   );
 }
 

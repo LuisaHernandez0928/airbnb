@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 500px;
-  height: 80px;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 5px;
 }
