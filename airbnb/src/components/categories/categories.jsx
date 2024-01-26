@@ -2,27 +2,25 @@ import { useState } from "react";
 import { Subtitle } from "../subtitle";
 import styles from "./index.module.css";
 
-function Categories({ image, name, notifySelection }) {
+function Categories({ image, name, notifySelection, activate }) {
   const [selected, setSelected] = useState(false);
 
-  const [colorSubtitle, setColorSubtitle] = useState("");
+  const [colorSubtitle, setColorSubtitle] = useState(false);
 
   const notifyCategory = (e) => {
-    notifySelection(e.target.innerText);
-    console.log(e);
-    setSelected(true);
-    setColorSubtitle("black");
+    notifySelection(name);
+    console.log(e.target.innerText);
+    setSelected(!selected);
+    setColorSubtitle(!colorSubtitle);
   };
-
-  console.log(colorSubtitle);
 
   return (
     <div
-      className={selected ? styles.selectedStyle : styles.categoryContainer}
+      className={(activate===name) ? styles.selectedStyle : styles.categoryContainer}
       onClick={(e) => notifyCategory(e)}
     >
       <img className={styles.image} src={image} alt={name} />
-      <Subtitle text={name} typeColor={colorSubtitle} />
+      <Subtitle text={name} typeColor={activate===name} />
     </div>
   );
 }
