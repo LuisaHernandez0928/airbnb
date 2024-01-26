@@ -1,6 +1,6 @@
 .cardContainer {
-  width: 306px;
-  height: 290px;
+  width: 310px;
+  height: 390px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -23,6 +23,7 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  position: relative;
   padding: 5px;
 }
 
@@ -38,6 +39,20 @@ img {
   width: 100%;
   height: fit-content;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 2px;
 
+}
+
+.tags{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  z-index: 2;
+  padding: 5px 0px;
+  box-sizing: border-box;
 }
