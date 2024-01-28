@@ -6,25 +6,12 @@ import styles from "./index.module.css";
 import { AwardTag } from "../awardTag";
 import { Carousel } from "../carrousel/carrousel";
 
-function Card({ notifySelection }) {
-  const images = [
-    "https://a0.muscache.com/im/pictures/airflow/Hosting-9955014/original/ee3441a2-0b6f-4e69-898e-972cca5d9906.jpg?im_w=960",
-    "https://a0.muscache.com/im/pictures/31fb1db6-ad71-4e4c-84e1-485eeffe4cb9.jpg?im_w=720",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-9955014/original/544e4627-b7b7-450e-93c3-3e500206e7f6.jpeg?im_w=720",
-    "https://a0.muscache.com/im/pictures/5e622354-f982-4c99-a443-65da2eac249d.jpg?im_w=960",
-    "https://a0.muscache.com/im/pictures/cdf72d43-21f3-4097-8926-a3d406bb73b6.jpg?im_w=1200",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-578716806886078207/original/0bbc344a-0c24-4886-bd49-98c53a979ffb.jpeg?im_w=1200",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-483505/original/78e690c0-f88e-4192-909f-3ee48db24538.jpeg?im_w=720",
-    "https://a0.muscache.com/im/pictures/57537113/eb73f6fe_original.jpg?im_w=1200",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-483505/original/50f232d1-bf9d-4784-80a0-118cb95b02cc.jpeg?im_w=1200",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-483505/original/e3e8fccc-ebb3-4a9c-ab09-c3de4fb9e7c8.jpeg?im_w=1200",
-  ];
-
+function Card({ images, favoritoHuspedes, description, availability, price }) {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.image}>
         <div className={styles.tags}>
-          <AwardTag typeAward={"Favorito entre huéspedes"} />
+          <AwardTag typeAward={favoritoHuspedes} />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
@@ -44,18 +31,17 @@ function Card({ notifySelection }) {
             <path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path>
           </svg>
         </div>
-
         <Carousel images={images} />
       </div>
       <div className={styles.headerInfo}>
-        <Title text={"La Calera, Colombia"} />
+        <Title text={description} />
         <Score value={4.94} />
       </div>
       <div className={styles.bodyInfo}>
         <Subtitle text={"A 20 kilómetros de distancia"} typeColor={false} />
-        <Subtitle text={"4-9 de febrero"} typeColor={false} />
+        <Subtitle text={availability} typeColor={false} />
       </div>
-      <PriceFormatter priceUSD={52} currency={"COP"} />
+      <PriceFormatter priceUSD={price} currency={"COP"} />
     </div>
   );
 }

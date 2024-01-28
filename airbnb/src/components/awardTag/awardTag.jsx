@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 function AwardTag({ typeAward }) {
   return (
     <button className={styles.awardContainer}>
-      <Title text={typeAward} />
+      <Title text={typeAward ? "Favorito entre huespedes" : ""} />
     </button>
   );
 }

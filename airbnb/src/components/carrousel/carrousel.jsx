@@ -83,7 +83,7 @@ function Carousel({ images }) {
             </div>
           </button>
         </div>
-        <img src={images[currentImage]} alt={`Slide ${currentImage + 1}`} />
+        <img style={{objectFit: 'cover'}} src={images[currentImage]} alt={`Slide ${currentImage + 1}`} />
       </div>
       <Paginator totalItems={images.length} activeIndex={currentImage} />
     </div>

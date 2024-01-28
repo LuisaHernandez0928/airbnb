@@ -7,3 +7,9 @@
   justify-content: flex-start;
 }
 
+.galeryConrainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto, 5vw);
+  grid-gap: 10px;
+}
