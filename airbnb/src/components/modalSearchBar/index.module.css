@@ -1,5 +1,4 @@
-
-.estandarModal{
+.estandarModal {
   display: flex;
   margin-top: 12px;
   padding: 16px 0px;
@@ -11,12 +10,13 @@
   box-sizing: border-box;
   border-radius: 50px;
   position: absolute;
-  top:64px;
+  z-index: 3;
+  top: 64px;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.searchModal{
+.searchModal {
   display: flex;
   margin-top: 12px;
   padding: 40px 0px;
@@ -28,8 +28,20 @@
   box-sizing: border-box;
   border-radius: 50px;
   position: absolute;
-  top:64px;
+  z-index: 3;
+  top: 64px;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+}
+
+.filterModal {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

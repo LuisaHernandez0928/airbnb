@@ -11,40 +11,6 @@ import { RadioButton } from "./components/radioButton";
 const dataLocal = localStorage.getItem("recentSearches");
 const DataOfRecentSearch = dataLocal ? JSON.parse(dataLocal) : [];
 
-function Modal({ children }) {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        left: "0px",
-        top: "0px",
-        zIndex: 30,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-      }}
-    >
-      <div
-        style={{
-          width: "fit-content",
-          height: "fit-content",
-          borderRadius: "8px",
-          backgroundColor: "#fff",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
-
 function App() {
   const [recentSearches, setRecentSearches] = useState(DataOfRecentSearch);
   const [headerModalShouldBeClosed, setHeaderModalShouldBeClosed] =
@@ -119,10 +85,6 @@ function App() {
       />
       <FilterBar data={data} />
       <div className="galeryConrainer">{galleryAirbnb()}</div>
-
-      <Modal>
-        <RadioButton />
-      </Modal>
     </div>
   );
 }

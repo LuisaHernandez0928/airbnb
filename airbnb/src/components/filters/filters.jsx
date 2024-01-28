@@ -8,7 +8,7 @@ import { RadioButton } from "../radioButton/radioButton";
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
 
-  const filters = <RadioButton />
+  const filters = <RadioButton />;
 
   const showInfo = (content) => {
     return <div>{content}</div>;
@@ -23,11 +23,13 @@ function Filters({ data }) {
       <TuneIcon />
       <Title text={"Filtros"} />
       {showFilters ? (
-        <ModalSearchBar
-          typeParameter={filters}
-          showParameterInfo={showInfo}
-          destinationSearch={""}
-        />
+        <div className={styles.aboveScreen}>
+          <ModalSearchBar
+            typeParameter={filters}
+            showParameterInfo={showInfo}
+            destinationSearch={"filter"}
+          />
+        </div>
       ) : (
         <></>
       )}
