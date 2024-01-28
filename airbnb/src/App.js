@@ -6,8 +6,6 @@ import { FilterBar } from "./components/filterBar";
 import data from "./data.json";
 import { Card } from "./components/card/card";
 
-import { RadioButton } from "./components/radioButton";
-
 const dataLocal = localStorage.getItem("recentSearches");
 const DataOfRecentSearch = dataLocal ? JSON.parse(dataLocal) : [];
 
