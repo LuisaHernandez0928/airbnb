@@ -13,6 +13,7 @@ function Filters({ data }) {
   const showInfo = (content) => {
     return <div>{content}</div>;
   };
+  
   const openFilters = () => {
     console.log("entro a filtros");
     setShowFilters(!showFilters);
