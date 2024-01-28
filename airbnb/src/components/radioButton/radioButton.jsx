@@ -11,7 +11,11 @@ function RadioButton() {
           "Busca habitaciones, alojamientos enteros o cualquier tipo de espacio."
         }
       />
-      <div className={styles.radioButtonComponent}></div>
+      <div className={styles.radioButtonComponent}>
+        <button className={styles.buttonAlojamiento}>Cualrquier tipo</button>
+        <button className={styles.buttonAlojamiento}>Habitacion</button>
+        <button className={styles.buttonAlojamiento}>Alojamiento entero</button>
+      </div>
     </div>
   );
 }
