@@ -8,7 +8,8 @@ import { RadioButton } from "../radioButton/radioButton";
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
 
-  const filters = <RadioButton />;
+  const filters = 
+  <RadioButton />;
 
   const showInfo = (content) => {
     return <div>{content}</div>;
@@ -16,7 +17,7 @@ function Filters({ data }) {
   
   const openFilters = () => {
     console.log("entro a filtros");
-    setShowFilters(!showFilters);
+    setShowFilters(true);
   };
 
   return (
