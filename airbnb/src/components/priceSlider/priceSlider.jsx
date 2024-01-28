@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import styles from "./index.module.css";
 
-
 const MultiRangeSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
@@ -68,14 +67,27 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
         }}
         className={styles.thumb + " " + styles.thumbRight}
       />
-
       <div className={styles.slider}>
         <div className={styles.sliderTrack} />
         <div ref={range} className={styles.sliderRange} />
-      </div>
-      <div>
-        <div className={styles.sliderLeftValue}>{minVal}</div>
-        <div className={styles.sliderLeftValue}>{maxVal}</div>
+
+        <div className={styles.inputSlider}>
+          <div className={styles.inputLeftValue}>
+            <div className={styles.fontFormat}>Minimo</div>
+            <div className={styles.priceFormat}>
+              <span aria-hidden="true">$</span>
+              <input type="text" value={minVal} />
+            </div>
+          </div>
+          <div className={styles.separator}>___</div>
+          <div className={styles.inputRightValue}>
+            <div className={styles.fontFormat}>Maximo</div>
+            <div className={styles.priceFormat}>
+              <span aria-hidden="true">$</span>
+              <input type="text" value={maxVal} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
