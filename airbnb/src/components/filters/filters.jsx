@@ -4,17 +4,22 @@ import { Title } from "../title";
 import styles from "./index.module.css";
 import TuneIcon from "@mui/icons-material/Tune";
 import { RadioButton } from "../radioButton/radioButton";
+import { RangePrices } from "../../rangePricesFilter/rangePricesFilter";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
 
-  const filters = 
-  <RadioButton />;
+  const filters = (
+    <div className={styles.filterLayout}>
+      <RadioButton />
+      <RangePrices />
+    </div>
+  );
 
   const showInfo = (content) => {
     return <div>{content}</div>;
   };
-  
+
   const openFilters = () => {
     console.log("entro a filtros");
     setShowFilters(true);
