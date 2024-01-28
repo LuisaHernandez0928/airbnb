@@ -3,8 +3,8 @@ import styles from "./index.module.css";
 
 function AwardTag({ typeAward }) {
   return (
-    <button className={styles.awardContainer}>
-      <Title text={typeAward ? "Favorito entre huespedes" : ""} />
+    <button className={typeAward ? styles.awardContainer : styles.noAwarded}>
+      <Title text={typeAward && "Favorito entre huespedes"} />
     </button>
   );
 }

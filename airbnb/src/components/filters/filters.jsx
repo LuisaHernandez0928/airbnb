@@ -4,7 +4,7 @@ import { Title } from "../title";
 import styles from "./index.module.css";
 import TuneIcon from "@mui/icons-material/Tune";
 import { RadioButton } from "../radioButton/radioButton";
-import { RangePrices } from "../../rangePricesFilter/rangePricesFilter";
+import { RangePrices } from "../rangePricesFilter/rangePricesFilter";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
