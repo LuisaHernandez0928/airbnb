@@ -17,7 +17,7 @@
   margin: 24px;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow:scroll;
 }
 .aboveScreen {
   position: fixed;

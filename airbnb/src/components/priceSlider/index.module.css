@@ -1,17 +1,20 @@
 .container {
-  margin-top: 100px;
+  margin-top: 50px;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   width: 100%;
+  box-sizing: border-box;
 }
+
 
 .slider {
   background-color: #DDD;
   height: 1px;
-  width: 80% !important;
+  width: 100% !important;
+  box-sizing: border-box;
   position: relative !important;
 }
 
@@ -24,6 +27,7 @@
 
 .sliderTrack,
 .sliderRange {
+  width: 100%;
   border-radius: 3px;
   height: 5px;
 }
@@ -67,8 +71,8 @@
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: 80%;
   outline: none;
+  box-sizing: border-box;
 }
 
 .thumb::-webkit-slider-thumb {
@@ -89,11 +93,11 @@
   margin-top: 20px;
   display: flex;
   flex-direction: row;
-  width: 100%;
   height: 50px;
   box-sizing: border-box;
-  justify-content: space-between;
-  align-items: start;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 .inputLeftValue>input {
@@ -110,7 +114,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 250px;
+  width: 230px;
   height: 51px;
   border: 1px solid #B0B0B0;
   border-radius: 8px;

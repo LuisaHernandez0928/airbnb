@@ -70,7 +70,6 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
       <div className={styles.slider}>
         <div className={styles.sliderTrack} />
         <div ref={range} className={styles.sliderRange} />
-
         <div className={styles.inputSlider}>
           <div className={styles.inputLeftValue}>
             <div className={styles.fontFormat}>Minimo</div>
