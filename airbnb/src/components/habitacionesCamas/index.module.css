@@ -34,13 +34,19 @@
 }
 
 .numericOption:first-child{
-  width: 122px;
+  width: 122px !important;
   height: 40px;
+
+}
+
+.buttonSelectedA:first-child {
+  width: 122px
 
 }
 .buttonSelectedA {
   padding: 4px 10px;
   height: 40px;
+  width: 58px;
   line-height: 1.25rem;
   font-size: 1rem;
   font-weight: 600;

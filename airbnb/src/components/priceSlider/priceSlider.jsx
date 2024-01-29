@@ -1,39 +1,73 @@
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./index.module.css";
 
+/*const getPercent = (value, min, max) => {
+  console.log(value, min, max);
+  Math.round(((value - min) / (max - min)) * 100);
+};*/
 const MultiRangeSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
+  const [maxInput, setMaxInput] = useState(max);
   const minValRef = useRef(min);
   const maxValRef = useRef(max);
   const range = useRef(null);
 
-  // Convert to percentage
-  const getPercent = useCallback(
-    (value) => Math.round(((value - min) / (max - min)) * 100),
-    [min, max]
-  );
+  const modifyMaxSlider = (e) => {
+    if (e.target.value === "") {
+      setMaxVal(max);
+      setMaxInput(e.target.value);
+    } else if (e.target.value <= minVal) {
+      setMaxVal(minVal + 1);
+      setMaxInput(e.target.value);
+    } else if (e.target.value >= max) {
+      setMaxVal(max);
+      setMaxInput(e.target.value);
+    } else if (!Number(e.target.value)) {
+      setMaxVal(max);
+      setMaxInput(max);
+    } else {
+      setMaxInput(e.target.value);
+      setMaxVal(e.target.value);
+    }
+  };
+
+  const modifyMinSlider = (e) => {
+    e.target.value === "" ? setMinVal(min) : setMinVal(Number(e.target.value) ? Number(e.target.value): e.target.value);
+  };
+
+  useEffect(() => {
+    minValRef.current = minVal;
+    maxValRef.current = maxVal;
+  }, [minVal, maxVal]);
 
   // Set width of the range to decrease from the left side
   useEffect(() => {
-    const minPercent = getPercent(minVal);
-    const maxPercent = getPercent(maxValRef.current);
-
+    const minPercent = Math.round(((minVal - min) / (max - min)) * 100);
+    const maxPercent = Math.round(
+      ((maxValRef.current - min) / (max - min)) * 100
+    );
+    console.log(minPercent + " " + maxPercent);
     if (range.current) {
+      console.log("entro?");
       range.current.style.left = `${minPercent}%`;
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
-  }, [minVal, getPercent]);
+  }, [minVal, min, max]);
 
   // Set width of the range to decrease from the right side
   useEffect(() => {
-    const minPercent = getPercent(minValRef.current);
-    const maxPercent = getPercent(maxVal);
+    const minPercent = Math.round(
+      ((minValRef.current - min) / (max - min)) * 100
+    );
+    const maxPercent = Math.round(
+      ((maxValRef.current - min) / (max - min)) * 100
+    );
 
     if (range.current) {
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
-  }, [maxVal, getPercent]);
+  }, [maxVal, min, max]);
 
   // Get min and max values when their state changes
   useEffect(() => {
@@ -46,24 +80,24 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
         type="range"
         min={min}
         max={max}
+        step={100}
         value={minVal}
         onChange={(event) => {
           const value = Math.min(Number(event.target.value), maxVal - 1);
           setMinVal(value);
-          minValRef.current = value;
         }}
         className={styles.thumb + " " + styles.thumbLeft}
-        style={{ zIndex: minVal > max - 100 }}
       />
       <input
         type="range"
         min={min}
         max={max}
+        step={100}
         value={maxVal}
         onChange={(event) => {
           const value = Math.max(Number(event.target.value), minVal + 1);
           setMaxVal(value);
-          maxValRef.current = value;
+          setMaxInput(value);
         }}
         className={styles.thumb + " " + styles.thumbRight}
       />
@@ -75,7 +109,11 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
             <div className={styles.fontFormat}>Minimo</div>
             <div className={styles.priceFormat}>
               <span aria-hidden="true">$</span>
-              <input type="text" value={minVal} />
+              <input
+                type="text"
+                value={minVal}
+                onChange={(e) => modifyMinSlider(e)}
+              />
             </div>
           </div>
           <div className={styles.separator}>___</div>
@@ -83,7 +121,11 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
             <div className={styles.fontFormat}>Maximo</div>
             <div className={styles.priceFormat}>
               <span aria-hidden="true">$</span>
-              <input type="text" value={maxVal} />
+              <input
+                type="text"
+                value={maxInput}
+                onChange={(e) => modifyMaxSlider(e)}
+              />
             </div>
           </div>
         </div>

@@ -48,7 +48,7 @@ function HabitacionesCamas() {
         </button>
         <button
           className={
-            buttonSelected === "2"
+            buttonSelected === "3"
               ? styles.buttonSelectedA
               : styles.numericOption
           }
@@ -58,7 +58,7 @@ function HabitacionesCamas() {
         </button>
         <button
           className={
-            buttonSelected === "2"
+            buttonSelected === "4"
               ? styles.buttonSelectedA
               : styles.numericOption
           }
@@ -68,7 +68,7 @@ function HabitacionesCamas() {
         </button>
         <button
           className={
-            buttonSelected === "2"
+            buttonSelected === "5"
               ? styles.buttonSelectedA
               : styles.numericOption
           }
@@ -78,7 +78,7 @@ function HabitacionesCamas() {
         </button>
         <button
           className={
-            buttonSelected === "2"
+            buttonSelected === "6"
               ? styles.buttonSelectedA
               : styles.numericOption
           }
@@ -88,7 +88,7 @@ function HabitacionesCamas() {
         </button>
         <button
           className={
-            buttonSelected === "2"
+            buttonSelected === "7"
               ? styles.buttonSelectedA
               : styles.numericOption
           }
@@ -98,7 +98,7 @@ function HabitacionesCamas() {
         </button>
         <button
           className={
-            buttonSelected === "2"
+            buttonSelected === "8+"
               ? styles.buttonSelectedA
               : styles.numericOption
           }

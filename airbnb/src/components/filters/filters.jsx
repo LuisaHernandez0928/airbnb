@@ -23,7 +23,6 @@ function Filters({ data }) {
   };
 
   const openFilters = () => {
-    console.log("entro a filtros");
     setShowFilters(true);
   };
 
