@@ -15,12 +15,6 @@ function GraphPriceSlider({ data }) {
     return a - b;
   });
 
-  let noDuplicates = pricesSorted.filter((item, index) => {
-    return pricesSorted.indexOf(item) === index;
-  });
-
-  console.log(noDuplicates);
-
   let distance = maxValue - minValue;
 
   let barsAmount = 43;
@@ -55,6 +49,7 @@ function GraphPriceSlider({ data }) {
       }
       heigthRanges.push(count);
     }
+    console.log(heigthRanges);
     return heigthRanges;
   };
 

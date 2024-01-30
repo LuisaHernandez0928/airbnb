@@ -28,9 +28,11 @@ function Filters({ data }) {
   };
 
   return (
-    <button className={styles.filtersContainer} onClick={() => openFilters()}>
-      <TuneIcon />
-      <Title text={"Filtros"} />
+    <div className={styles.filtersContainer}>
+      <button onClick={openFilters}>
+        <TuneIcon />
+        <Title text={"Filtros"} />
+      </button>
       {showFilters && (
         <div className={styles.aboveScreen}>
           <ModalSearchBar
@@ -40,7 +42,7 @@ function Filters({ data }) {
           />
         </div>
       )}
-    </button>
+    </div>
   );
 }
 
