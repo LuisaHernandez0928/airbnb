@@ -20,17 +20,19 @@ function GraphPriceSlider({ data }) {
 
   let distance = maxValue - minValue;
 
-  let barsAmount = 45;
+  let barsAmount = 43;
 
   let range =Math.round(distance / barsAmount); 
+  console.log(range);
+
   let barsRange = [];
 
   const createBarraRange = () => {
     for (let i = 0; i <= barsAmount; i++) {
-      let dinamyBar=[]
-      dinamyBar.push(noDuplicates[i])
-      dinamyBar.push(noDuplicates[i] + range)
-      barsRange.push(dinamyBar)
+        let val1= minValue;
+        let val2= val1 + range;
+        minValue= val2;
+        barsRange.push([val1, val2]);
     }
     console.log(barsRange)
   };
