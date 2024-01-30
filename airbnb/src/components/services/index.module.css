@@ -1,48 +1,64 @@
 .mainContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
-  height: 300px;
+  height: fit-content;
   background-color: rgb(255, 255, 255);
-  color: black;
+  color: #222;
+  padding: 32px 24px;
+  box-sizing: border-box;
+  border-top: 1px solid #DDD;
+}
+
+.sectionContainer {
+  padding: 12px 0px 6px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .boxOptions {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: fit-content;
+  box-sizing: border-box;
+  grid-auto-flow: row;
+  color: #222;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
   display: flex;
-  flex-direction: column;
-  flex-direction: space-around;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  width: 200px;
-  height: 90%;
-  border: 1px solid rgb(3, 3, 3);
-  background-color: white;
-  color: black;
-  overflow-y: scroll;
-  box-sizing: border-box;
+  padding: 12px 0px;
+  gap: 12px
 }
 
-.moveButtons{
+.noExtend {
+  display: none;
+}
+
+.showButton {
+  padding: 24px 0px 0px 0px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
- align-items: center;
-  width: 60px;
-  height: 100%;
-  box-sizing: border-box;
-  gap: 10px;
-}
-
-button{
-  width: 30px;
-  background-color: rgb(233, 224, 224);
-  height: 30px;
-  border-radius: 5px;
-  color: rgb(77, 75, 75);
-}
-li{
- color:black;
- padding: 5px;
- 
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #222;
 }

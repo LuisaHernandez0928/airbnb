@@ -1,57 +1,62 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
+import { serviceOptions } from "./utils";
+import { TitleFilter } from "../titleFilter";
+import { Title } from "../title";
 import styles from "./index.module.css";
-import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 function Services() {
-  const data = [
-    "Wifi",
-    "Lavadora",
-    "Aire acondicionado",
-    "Cocina",
-    "Zona de trabajo",
-    "Calefaccion",
-  ];
-  const [sourceList, setSourceList] = useState(data);
   const [checkReport, setCheckReport] = useState([]);
+  const [acordeon, setAccordeon] = useState(false);
+  const [sourceList, setsourceList] = useState(serviceOptions.comodidades);
 
-  useEffect(() => {
-    setCheckReport(new Array(sourceList.length));
-  }, [sourceList]);
-
-  const notifyClick = (index, item) => {
+  const notifyClick = (index) => {
     const copy = [...checkReport];
     const current = copy[index] ?? false;
     copy[index] = !current;
     setCheckReport(copy);
   };
 
-  return (
-    <div className={styles.mainContainer}>
-      <div className={styles.boxOptions}>
-        <div
-          style={{
-            borderBottom: "1px solid black",
-            width: "100%",
-            padding: "4px",
-          }}
-        >
-          Source
-        </div>
-        <ul>
-          {sourceList.map((item, index) => (
-            <li key={index} onClick={() => notifyClick(index, item)}>
+  const showServices = () => {
+    setAccordeon(!acordeon);
+  };
+
+  const showMoreSectios = (data, subtitle) => {
+    return (
+      <div className={styles.sectionContainer}>
+        <Title text={subtitle} cardFilter={true} />
+        <ul className={styles.boxOptions}>
+          {data.map((item, index) => (
+            <li key={index} onClick={() => notifyClick(index)}>
               {checkReport[index] ? (
-                <CheckBoxIcon />
+                <CheckBoxIcon sx={{ fontSize: 30 }} />
               ) : (
-                <CheckBoxOutlineBlankIcon />
+                <CheckBoxOutlineBlankOutlinedIcon sx={{ fontSize: 30 }} />
               )}
-              {console.log("sourceList2: " + sourceList)}
               {item}
             </li>
           ))}
         </ul>
       </div>
+    );
+  };
+
+  return (
+    <div className={styles.mainContainer}>
+      <TitleFilter text={"Servicios"} />
+      {showMoreSectios(serviceOptions.comodidades, "Comodidades")}
+      <div className={acordeon ? styles.sectionContainer : styles.noExtend}>
+        {showMoreSectios(serviceOptions.caracteristicas, "Caracteristicas")}
+        {showMoreSectios(serviceOptions.seguridad, "Seguridad")}
+      </div>
+      <button className={styles.showButton} onClick={(e) => showServices(e)}>
+        {acordeon ? (
+          <Title text={"Muestra menos"} cardFilter={true} />
+        ) : (
+          <Title text={"Muestra más"} cardFilter={true} />
+        )}
+      </button>
     </div>
   );
 }

@@ -1,0 +1,28 @@
+export const serviceOptions = {
+  comodidades: [
+    "Wifi",
+    "Lavadora",
+    "Aire acondicionado",
+    "Zona de trabajo",
+    "Secadora de pelo",
+    "Cocina",
+    "Secadora",
+    "Calefaccion",
+    "Televisor",
+    "Plancha",
+  ],
+  caracteristicas: [
+    "Piscina",
+    "Jacuzzi",
+    "Estacionamiento gratuito",
+    "Cargador para autos eléctricos",
+    "Cuna",
+    "Cama King",
+    "Gimnasio",
+    "Parrilla",
+    "Desayuno",
+    "Chimenea interior",
+    "Apto para fumadores",
+  ],
+  seguridad: ["Detectar de humo", "Detector de monóxido de carbono"],
+};
