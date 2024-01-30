@@ -6,7 +6,7 @@ function CardFilter({ text, icon, description, notifyClick }) {
       <span>{icon}</span>
       <span className={styles.textContainer}>
         {text}
-        {description}
+        <span className={styles.descriptionContainer}>{description}</span>
       </span>
     </button>
   );

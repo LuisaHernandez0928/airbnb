@@ -1,7 +1,7 @@
 import styles from "./index.module.css";
 
-function Title({text}) {
-  return <div className={styles.titleFont}>{text}</div>;
+function Title({text, cardFilter}) {
+  return <div className={cardFilter ? styles.titleFontCardFilter: styles.titleFont }>{text}</div>;
 }
 
 export { Title };
