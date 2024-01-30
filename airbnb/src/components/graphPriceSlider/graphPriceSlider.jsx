@@ -1,4 +1,3 @@
-import { Height } from "@mui/icons-material";
 import styles from "./index.module.css";
 
 function GraphPriceSlider({ data }) {
@@ -80,7 +79,8 @@ function GraphPriceSlider({ data }) {
                 "" + heightEquivalences(maxHeightReference, heigthRange) + "%",
               backgroundColor: "#222",
               borderTopRightRadius: "2px",
-              borderTopLefttRadius: "2px",
+              borderTopLeftRadius: "2px",
+              marginRight:"1px"
             }}
           ></div>
         ))}
