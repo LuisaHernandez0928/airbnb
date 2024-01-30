@@ -96,6 +96,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
           onChange={(event) => {
             const value = Math.min(Number(event.target.value), maxVal - 1);
             setMinVal(value);
+            setMinInput(value);
           }}
           className={styles.thumb + " " + styles.thumbLeft}
         />

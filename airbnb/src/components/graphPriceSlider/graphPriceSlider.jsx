@@ -1,97 +1,39 @@
-import { useEffect } from "react";
+import {
+  getAirbnbPrices,
+  createBarraRange,
+  counterAirbnbRange,
+  identifyMinIndex,
+  identifyMaxIndex,
+  heightEquivalences
+} from "./utils";
+
 import styles from "./index.module.css";
 
+const BARS_AMOUNT = 43;
+
 function GraphPriceSlider({ data, minPrice, maxPrice }) {
-  let airbnbs = [];
-  for (let i = 1; i < Object.keys(data).length; i++) {
-    for (let j = 0; j < Object.keys(data[i].availability).length; j++) {
-      airbnbs.push(data[i].availability[j].price);
-    }
-  }
+  const airbnbPrices = getAirbnbPrices(data);
+  const pricesSorted = airbnbPrices.sort((a, b) => a - b);
 
-  let minValue = Math.min(...airbnbs);
-  let maxValue = Math.max(...airbnbs);
+  const minValue = Math.min(...airbnbPrices);
+  const maxValue = Math.max(...airbnbPrices);
 
-  let pricesSorted = airbnbs.sort(function (a, b) {
-    return a - b;
-  });
+  const distance = maxValue - minValue;
+  const range = Math.round(distance / BARS_AMOUNT);
+  const barsRange = createBarraRange(minValue, range, BARS_AMOUNT);
+  const heigthRanges = counterAirbnbRange(barsRange, pricesSorted);
 
-  let distance = maxValue - minValue;
+  const maxHeightReference = Math.max(...heigthRanges);
 
-  let barsAmount = 43;
-
-  let range = Math.round(distance / barsAmount);
-  let barsRange = [];
-
-  const createBarraRange = () => {
-    for (let i = 0; i <= barsAmount; i++) {
-      let val1 = minValue;
-      let val2 = val1 + range;
-      minValue = val2;
-      barsRange.push([val1, val2]);
-    }
-    return barsRange;
-  };
-
-  createBarraRange();
-  console.log(barsRange);
-  let heigthRanges = [];
-
-  const counterAirbnbRange = () => {
-    for (let j = 0; j < barsRange.length; j++) {
-      let count = 0;
-      for (let i = 0; i < pricesSorted.length; i++) {
-        if (
-          pricesSorted[i] < barsRange[j][1] &&
-          pricesSorted[i] >= barsRange[j][0]
-        ) {
-          count++;
-        }
-      }
-      heigthRanges.push(count);
-    }
-    return heigthRanges;
-  };
-
-  counterAirbnbRange();
-
-  let maxHeightReference = Math.max(...heigthRanges);
-
-  const heightEquivalences = (max, current) => {
-    let percentaje = current * (100 / max);
-    return percentaje;
-  };
-
-  let indexMin = 0;
-  let indexMax = 0;
-
-  const identifyMinIndex = (min) => {
-    for (let i = 0; i < barsRange.length; i++) {
-      if (barsRange[i][0] === min) {
-        indexMin = i;
-      }
-    }
-  };
-
-  const identifyMaxIndex = (max) => {
-    for (let i = 0; i < barsRange.length; i++) {
-      if (barsRange[i][1] >= (max - 8) && barsRange[i][1] <= (max)) {
-        indexMax = i;
-      }
-    }
-  };
-
-  identifyMinIndex(minPrice);
-  identifyMaxIndex(maxPrice);
-
-  console.log(minPrice, maxPrice, indexMin, indexMax);
+  const indexMin = identifyMinIndex(minPrice, barsRange);
+  const indexMax = identifyMaxIndex(maxPrice, barsRange);
 
   const graphPrices = () => {
     return (
       <div className={styles.graphContainer}>
         {heigthRanges.map((heigthRange, i) => (
           <div
-            key={i}
+            key={heigthRange + '-' + i}
             style={{
               width: "12px",
               height:
