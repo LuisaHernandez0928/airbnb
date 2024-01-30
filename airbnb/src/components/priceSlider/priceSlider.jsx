@@ -47,9 +47,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
     const maxPercent = Math.round(
       ((maxValRef.current - min) / (max - min)) * 100
     );
-    console.log(minPercent + " " + maxPercent);
     if (range.current) {
-      console.log("entro?");
       range.current.style.left = `${minPercent}%`;
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
@@ -71,7 +69,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
 
   // Get min and max values when their state changes
   useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
+    onChange({ min: minVal, max: maxVal});
   }, [minVal, maxVal, onChange]);
 
   return (

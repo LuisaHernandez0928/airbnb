@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { DescriptionFilter } from "../descriptionFilter";
 import { GraphPriceSlider } from "../graphPriceSlider";
 import { MultiRangeSlider } from "../priceSlider/priceSlider";
@@ -5,6 +6,10 @@ import { TitleFilter } from "../titleFilter";
 import styles from "./index.module.css";
 
 function RangePrices({ data }) {
+  const [min, setMin] = useState(20);
+  const [max, setMax] = useState(500);
+
+  console.log(min, max);
   return (
     <div className={styles.layoutPrices}>
       <div className={styles.headerText}>
@@ -14,11 +19,14 @@ function RangePrices({ data }) {
         />
       </div>
       <div className={styles.graphSlider}>
-        <GraphPriceSlider data={data} minPrice={155} maxPrice={209}/>
+        <GraphPriceSlider data={data} minPrice={150} maxPrice={209} />
         <MultiRangeSlider
           min={20}
           max={416}
-          onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+          onChange={({ min, max }) => {
+            setMin(min);
+            setMax(max);
+          }}
         />
       </div>
     </div>

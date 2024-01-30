@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./index.module.css";
 
 function GraphPriceSlider({ data, minPrice, maxPrice }) {
@@ -68,7 +67,6 @@ function GraphPriceSlider({ data, minPrice, maxPrice }) {
   const identifyIndex = (min, max) => {
     for (let i = 0; i < barsRange.length; i++) {
       if (barsRange[i][0] === min) {
-        console.log("entro en min");
         indexMin = i;
       }
       if (barsRange[i][1] === max) {
@@ -78,8 +76,6 @@ function GraphPriceSlider({ data, minPrice, maxPrice }) {
   };
 
   identifyIndex(minPrice, maxPrice);
-
-  console.log(heigthRanges.length, barsRange.length);
   const graphPrices = () => {
     return (
       <div className={styles.graphContainer}>
