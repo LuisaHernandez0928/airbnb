@@ -1,6 +1,9 @@
+import { useState } from "react";
 import styles from "./index.module.css";
 
-function GraphPriceSlider({ data }) {
+function GraphPriceSlider({ data, minPrice, maxPrice }) {
+  const [indexMin, setIndexMin] = useState(0);
+  const [indexMax, setIndexMax] = useState(0);
   let airbnbs = [];
   for (let i = 1; i < Object.keys(data).length; i++) {
     for (let j = 0; j < Object.keys(data[i].availability).length; j++) {
@@ -29,6 +32,7 @@ function GraphPriceSlider({ data }) {
       minValue = val2;
       barsRange.push([val1, val2]);
     }
+    console.log(barsRange);
     return barsRange;
   };
 
@@ -49,7 +53,6 @@ function GraphPriceSlider({ data }) {
       }
       heigthRanges.push(count);
     }
-    console.log(heigthRanges);
     return heigthRanges;
   };
 
@@ -60,6 +63,31 @@ function GraphPriceSlider({ data }) {
   const heightEquivalences = (max, current) => {
     let percentaje = current * (100 / max);
     return percentaje;
+  };
+
+  const identifyIndex = (minPrice, maxPrice) => {
+    for (let i = 0; i < barsRange.length; i++) {
+      if (barsRange[i][0] === minPrice) {
+        setIndexMin(i);
+      }
+      if (barsRange[i][0] === maxPrice) {
+        setIndexMax(i);
+      }
+    }
+  };
+
+  const identifyMaxIndex = (minPrice, maxPrice) => {
+    let indexMin = 0;
+    let indexMax = 0;
+    for (let i = 0; i < barsRange.length; i++) {
+      if (barsRange[i][0] === minPrice) {
+        indexMin = i;
+      }
+      if (barsRange[i][1] === maxPrice) {
+        indexMax = i;
+      }
+    }
+    return indexMin;
   };
 
   const graphPrices = () => {
@@ -76,7 +104,7 @@ function GraphPriceSlider({ data }) {
               borderTopRightRadius: "2px",
               borderTopLeftRadius: "2px",
               marginRight: "1.25px",
-              flexShrink: 0
+              flexShrink: 0,
             }}
           ></div>
         ))}
