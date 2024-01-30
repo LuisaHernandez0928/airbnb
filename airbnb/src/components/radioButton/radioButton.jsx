@@ -4,7 +4,7 @@ import { DescriptionFilter } from "../descriptionFilter";
 import { useState } from "react";
 
 function RadioButton() {
-  const [buttonSelected, setButtonSelected] = useState("");
+  const [buttonSelected, setButtonSelected] = useState("Cualquier tipo");
 
   const notifyButton = (e) => {
     setButtonSelected(e.target.innerText);

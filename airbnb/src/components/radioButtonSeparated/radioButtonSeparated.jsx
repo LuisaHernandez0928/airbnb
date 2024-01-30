@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { DescriptionFilter } from "../descriptionFilter";
-import styles from './index.module.css'
+import styles from "./index.module.css";
 
-
-function RadioButtonSeparated({subtitle}){
-
-  const [buttonSelected, setButtonSelected] = useState("");
+function RadioButtonSeparated({ subtitle }) {
+  const [buttonSelected, setButtonSelected] = useState("Cualquiera");
 
   const notifyButton = (e) => {
     setButtonSelected(e.target.innerText);
@@ -25,6 +23,7 @@ function RadioButtonSeparated({subtitle}){
         >
           Cualquiera
         </button>
+
         <button
           className={
             buttonSelected === "1"
@@ -35,6 +34,7 @@ function RadioButtonSeparated({subtitle}){
         >
           1
         </button>
+
         <button
           className={
             buttonSelected === "2"
@@ -45,6 +45,7 @@ function RadioButtonSeparated({subtitle}){
         >
           2
         </button>
+
         <button
           className={
             buttonSelected === "3"
@@ -55,6 +56,7 @@ function RadioButtonSeparated({subtitle}){
         >
           3
         </button>
+
         <button
           className={
             buttonSelected === "4"
@@ -65,6 +67,7 @@ function RadioButtonSeparated({subtitle}){
         >
           4
         </button>
+
         <button
           className={
             buttonSelected === "5"
@@ -75,6 +78,7 @@ function RadioButtonSeparated({subtitle}){
         >
           5
         </button>
+
         <button
           className={
             buttonSelected === "6"
@@ -85,6 +89,7 @@ function RadioButtonSeparated({subtitle}){
         >
           6
         </button>
+
         <button
           className={
             buttonSelected === "7"
@@ -95,6 +100,7 @@ function RadioButtonSeparated({subtitle}){
         >
           7
         </button>
+
         <button
           className={
             buttonSelected === "8+"
@@ -107,8 +113,7 @@ function RadioButtonSeparated({subtitle}){
         </button>
       </div>
     </div>
-  )
-
+  );
 }
 
-export {RadioButtonSeparated}
+export { RadioButtonSeparated };
