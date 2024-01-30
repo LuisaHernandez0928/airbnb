@@ -2,8 +2,7 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 function GraphPriceSlider({ data, minPrice, maxPrice }) {
-  const [indexMin, setIndexMin] = useState(0);
-  const [indexMax, setIndexMax] = useState(0);
+
   let airbnbs = [];
   for (let i = 1; i < Object.keys(data).length; i++) {
     for (let j = 0; j < Object.keys(data[i].availability).length; j++) {
@@ -32,7 +31,6 @@ function GraphPriceSlider({ data, minPrice, maxPrice }) {
       minValue = val2;
       barsRange.push([val1, val2]);
     }
-    console.log(barsRange);
     return barsRange;
   };
 
@@ -65,31 +63,23 @@ function GraphPriceSlider({ data, minPrice, maxPrice }) {
     return percentaje;
   };
 
-  const identifyIndex = (minPrice, maxPrice) => {
+  let indexMin = 0;
+  let indexMax = 0;
+  const identifyIndex = (min, max) => {
     for (let i = 0; i < barsRange.length; i++) {
-      if (barsRange[i][0] === minPrice) {
-        setIndexMin(i);
-      }
-      if (barsRange[i][0] === maxPrice) {
-        setIndexMax(i);
-      }
-    }
-  };
-
-  const identifyMaxIndex = (minPrice, maxPrice) => {
-    let indexMin = 0;
-    let indexMax = 0;
-    for (let i = 0; i < barsRange.length; i++) {
-      if (barsRange[i][0] === minPrice) {
+      if (barsRange[i][0] === min) {
+        console.log("entro en min");
         indexMin = i;
       }
-      if (barsRange[i][1] === maxPrice) {
+      if (barsRange[i][1] === max) {
         indexMax = i;
       }
     }
-    return indexMin;
   };
 
+  identifyIndex(minPrice, maxPrice);
+
+  console.log(heigthRanges.length, barsRange.length);
   const graphPrices = () => {
     return (
       <div className={styles.graphContainer}>
@@ -100,7 +90,7 @@ function GraphPriceSlider({ data, minPrice, maxPrice }) {
               width: "12px",
               height:
                 "" + heightEquivalences(maxHeightReference, heigthRange) + "%",
-              backgroundColor: "#222",
+              backgroundColor: i >= indexMin && i <= indexMax ? "#222" : "#DDD",
               borderTopRightRadius: "2px",
               borderTopLeftRadius: "2px",
               marginRight: "1.25px",
