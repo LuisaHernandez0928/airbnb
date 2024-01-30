@@ -1,0 +1,27 @@
+.cardContainer{
+  width: 348px;
+  height: 152px;
+  box-sizing: border-box;
+  padding: 20px 24px;
+  display: column;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  
+}
+
+.cardContainer:hover{
+  border: 1px solid #222;
+}
+
+.textContainer{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
