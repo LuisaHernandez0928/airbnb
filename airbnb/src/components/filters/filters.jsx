@@ -8,6 +8,7 @@ import { RangePrices } from "../rangePricesFilter/rangePricesFilter";
 import { HabitacionesCamas } from "../habitacionesCamas";
 import { Prizes } from "../alojamientosDePrimera";
 import { Properties } from "../propertiesType";
+import { Services } from "../services/services";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
@@ -19,6 +20,7 @@ function Filters({ data }) {
       <HabitacionesCamas />
       <Prizes />
       <Properties />
+      <Services />
     </div>
   );
 

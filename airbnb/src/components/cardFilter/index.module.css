@@ -19,6 +19,23 @@
   border: 1px solid #222;
 }
 
+.selectedContainer {
+  width: 348px;
+  height: 154px;
+  box-sizing: border-box;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;  
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #222;
+  outline: none;
+  background-color: #F7F7F7;
+  transition: step-start;
+}
+
 .textContainer {
   width: 100%;
   height: fit-content;
