@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 import styles from "./index.module.css";
 
 function GraphPriceSlider({ data, minPrice, maxPrice }) {
-
   let airbnbs = [];
   for (let i = 1; i < Object.keys(data).length; i++) {
     for (let j = 0; j < Object.keys(data[i].availability).length; j++) {
@@ -34,7 +34,7 @@ function GraphPriceSlider({ data, minPrice, maxPrice }) {
   };
 
   createBarraRange();
-
+  console.log(barsRange);
   let heigthRanges = [];
 
   const counterAirbnbRange = () => {
@@ -64,18 +64,28 @@ function GraphPriceSlider({ data, minPrice, maxPrice }) {
 
   let indexMin = 0;
   let indexMax = 0;
-  const identifyIndex = (min, max) => {
+
+  const identifyMinIndex = (min) => {
     for (let i = 0; i < barsRange.length; i++) {
       if (barsRange[i][0] === min) {
         indexMin = i;
       }
-      if (barsRange[i][1] === max) {
+    }
+  };
+
+  const identifyMaxIndex = (max) => {
+    for (let i = 0; i < barsRange.length; i++) {
+      if (barsRange[i][1] >= (max - 8) && barsRange[i][1] <= (max)) {
         indexMax = i;
       }
     }
   };
 
-  identifyIndex(minPrice, maxPrice);
+  identifyMinIndex(minPrice);
+  identifyMaxIndex(maxPrice);
+
+  console.log(minPrice, maxPrice, indexMin, indexMax);
+
   const graphPrices = () => {
     return (
       <div className={styles.graphContainer}>

@@ -5,6 +5,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const [maxInput, setMaxInput] = useState(max);
+  const [minInput, setMinInput] = useState(min);
   const minValRef = useRef(min);
   const maxValRef = useRef(max);
   const range = useRef(null);
@@ -29,12 +30,23 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
   };
 
   const modifyMinSlider = (e) => {
-    e.target.value === ""
-      ? setMinVal(min)
-      : setMinVal(
-          Number(e.target.value) ? Number(e.target.value) : e.target.value
-        );
-  };
+      if (e.target.value === "") {
+        setMinVal(min);
+        setMinInput(e.target.value);
+      } else if (e.target.value >= maxVal) {
+        setMinVal(maxVal - 1);
+        setMinInput(e.target.value);
+      } else if (e.target.value <= min) {
+        setMinVal(min);
+        setMinInput(e.target.value);
+      } else if (!Number(e.target.value)) {
+        setMinVal(min);
+        setMinInput(min);
+      } else {
+        setMinInput(e.target.value);
+        setMinVal(e.target.value);
+      }
+    };
 
   useEffect(() => {
     minValRef.current = minVal;
@@ -112,7 +124,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
             <span aria-hidden="true">$</span>
             <input
               type="text"
-              value={minVal}
+              value={minInput}
               onChange={(e) => modifyMinSlider(e)}
             />
           </div>

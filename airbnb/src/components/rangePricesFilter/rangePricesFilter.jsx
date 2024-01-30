@@ -9,7 +9,6 @@ function RangePrices({ data }) {
   const [min, setMin] = useState(20);
   const [max, setMax] = useState(500);
 
-  console.log(min, max);
   return (
     <div className={styles.layoutPrices}>
       <div className={styles.headerText}>
@@ -19,7 +18,7 @@ function RangePrices({ data }) {
         />
       </div>
       <div className={styles.graphSlider}>
-        <GraphPriceSlider data={data} minPrice={150} maxPrice={209} />
+        <GraphPriceSlider data={data} minPrice={Number(min)} maxPrice={Number(max)} />
         <MultiRangeSlider
           min={20}
           max={416}
