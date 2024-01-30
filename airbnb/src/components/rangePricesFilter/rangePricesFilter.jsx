@@ -13,12 +13,14 @@ function RangePrices({ data }) {
           text={"Precios por noche sin incluir impuestos y tarifas"}
         />
       </div>
-      <GraphPriceSlider data={data} />
-      <MultiRangeSlider
-        min={0}
-        max={100000}
-        onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
-      />
+      <div className={styles.graphSlider}>
+        <GraphPriceSlider data={data} />
+        <MultiRangeSlider
+          min={0}
+          max={100000}
+          onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+        />
+      </div>
     </div>
   );
 }

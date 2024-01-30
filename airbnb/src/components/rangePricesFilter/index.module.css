@@ -16,3 +16,12 @@
   justify-content: space-around;
 }
 
+.graphSlider{
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}

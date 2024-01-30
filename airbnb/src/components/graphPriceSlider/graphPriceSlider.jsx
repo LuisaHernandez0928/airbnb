@@ -48,7 +48,7 @@ function GraphPriceSlider({ data }) {
       for (let i = 0; i < pricesSorted.length; i++) {
         if (
           pricesSorted[i] < barsRange[j][1] &&
-          pricesSorted[i] > barsRange[j][0]
+          pricesSorted[i] >= barsRange[j][0]
         ) {
           count++;
         }
@@ -80,7 +80,8 @@ function GraphPriceSlider({ data }) {
               backgroundColor: "#222",
               borderTopRightRadius: "2px",
               borderTopLeftRadius: "2px",
-              marginRight:"1px"
+              marginRight: "1.25px",
+              flexShrink: 0
             }}
           ></div>
         ))}
