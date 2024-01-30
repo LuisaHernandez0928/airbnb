@@ -1,7 +1,7 @@
+import { Height } from "@mui/icons-material";
 import styles from "./index.module.css";
 
 function GraphPriceSlider({ data }) {
-
   let airbnbs = [];
   for (let i = 1; i < Object.keys(data).length; i++) {
     for (let j = 0; j < Object.keys(data[i].availability).length; j++) {
@@ -39,12 +39,10 @@ function GraphPriceSlider({ data }) {
     return barsRange;
   };
 
-  let rangesBar= createBarraRange();
-  console.log(rangesBar);
+  createBarraRange();
 
   let heigthRanges = [];
 
-  
   const counterAirbnbRange = () => {
     for (let j = 0; j < barsRange.length; j++) {
       let count = 0;
@@ -58,12 +56,39 @@ function GraphPriceSlider({ data }) {
       }
       heigthRanges.push(count);
     }
-    console.log(heigthRanges)
+    return heigthRanges;
   };
 
   counterAirbnbRange();
-  
-  return <div className={styles.graphContainer}>Hola</div>;
+
+  let maxHeightReference = Math.max(...heigthRanges);
+
+  const heightEquivalences = (max, current) => {
+    let percentaje = current * (100 / max);
+    return percentaje;
+  };
+
+  const graphPrices = () => {
+    return (
+      <div className={styles.graphContainer}>
+        {heigthRanges.map((heigthRange, i) => (
+          <div
+            key={i}
+            style={{
+              width: "12px",
+              height:
+                "" + heightEquivalences(maxHeightReference, heigthRange) + "%",
+              backgroundColor: "#222",
+              borderTopRightRadius: "2px",
+              borderTopLefttRadius: "2px",
+            }}
+          ></div>
+        ))}
+      </div>
+    );
+  };
+
+  return <div>{graphPrices()}</div>;
 }
 
 export { GraphPriceSlider };
