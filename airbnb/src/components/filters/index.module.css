@@ -27,7 +27,6 @@
 
 .filterLayout {
   height: 560px;
-  margin: 24px;
   display: flex;
   flex-direction: column;
   overflow: scroll;
