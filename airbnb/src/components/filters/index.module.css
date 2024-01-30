@@ -11,14 +11,15 @@
   margin: 18px;
   padding: 4px;
 }
-.filterLayout{
-  max-height: 600px;
-  min-height: 580px;
+
+.filterLayout {
+  height: fit-content;
   margin: 24px;
   display: flex;
   flex-direction: column;
-  overflow:scroll;
+  overflow: scroll;
 }
+
 .aboveScreen {
   position: fixed;
   width: 100%;
@@ -30,5 +31,5 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  
+
 }

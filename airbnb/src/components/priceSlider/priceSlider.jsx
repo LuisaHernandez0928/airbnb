@@ -1,10 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "./index.module.css";
 
-/*const getPercent = (value, min, max) => {
-  console.log(value, min, max);
-  Math.round(((value - min) / (max - min)) * 100);
-};*/
 const MultiRangeSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
@@ -33,7 +29,11 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
   };
 
   const modifyMinSlider = (e) => {
-    e.target.value === "" ? setMinVal(min) : setMinVal(Number(e.target.value) ? Number(e.target.value): e.target.value);
+    e.target.value === ""
+      ? setMinVal(min)
+      : setMinVal(
+          Number(e.target.value) ? Number(e.target.value) : e.target.value
+        );
   };
 
   useEffect(() => {
@@ -76,57 +76,59 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
 
   return (
     <div className={styles.container}>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={100}
-        value={minVal}
-        onChange={(event) => {
-          const value = Math.min(Number(event.target.value), maxVal - 1);
-          setMinVal(value);
-        }}
-        className={styles.thumb + " " + styles.thumbLeft}
-      />
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={100}
-        value={maxVal}
-        onChange={(event) => {
-          const value = Math.max(Number(event.target.value), minVal + 1);
-          setMaxVal(value);
-          setMaxInput(value);
-        }}
-        className={styles.thumb + " " + styles.thumbRight}
-      />
-      <div className={styles.slider}>
-        <div className={styles.sliderTrack} />
-        <div ref={range} className={styles.sliderRange} />
-        <div className={styles.inputSlider}>
-          <div className={styles.inputLeftValue}>
-            <div className={styles.fontFormat}>Minimo</div>
-            <div className={styles.priceFormat}>
-              <span aria-hidden="true">$</span>
-              <input
-                type="text"
-                value={minVal}
-                onChange={(e) => modifyMinSlider(e)}
-              />
-            </div>
+      <div className={styles.barraConlosCirculos}>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={100}
+          value={minVal}
+          onChange={(event) => {
+            const value = Math.min(Number(event.target.value), maxVal - 1);
+            setMinVal(value);
+          }}
+          className={styles.thumb + " " + styles.thumbLeft}
+        />
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={100}
+          value={maxVal}
+          onChange={(event) => {
+            const value = Math.max(Number(event.target.value), minVal + 1);
+            setMaxVal(value);
+            setMaxInput(value);
+          }}
+          className={styles.thumb + " " + styles.thumbRight}
+        />
+        <div className={styles.slider}>
+          <div className={styles.sliderTrack} />
+          <div ref={range} className={styles.sliderRange} />
+        </div>
+      </div>
+      <div className={styles.inputSlider}>
+        <div className={styles.inputLeftValue}>
+          <div className={styles.fontFormat}>Minimo</div>
+          <div className={styles.priceFormat}>
+            <span aria-hidden="true">$</span>
+            <input
+              type="text"
+              value={minVal}
+              onChange={(e) => modifyMinSlider(e)}
+            />
           </div>
-          <div className={styles.separator}>___</div>
-          <div className={styles.inputRightValue}>
-            <div className={styles.fontFormat}>Maximo</div>
-            <div className={styles.priceFormat}>
-              <span aria-hidden="true">$</span>
-              <input
-                type="text"
-                value={maxInput}
-                onChange={(e) => modifyMaxSlider(e)}
-              />
-            </div>
+        </div>
+        <div className={styles.separator}>___</div>
+        <div className={styles.inputRightValue}>
+          <div className={styles.fontFormat}>Maximo</div>
+          <div className={styles.priceFormat}>
+            <span aria-hidden="true">$</span>
+            <input
+              type="text"
+              value={maxInput}
+              onChange={(e) => modifyMaxSlider(e)}
+            />
           </div>
         </div>
       </div>

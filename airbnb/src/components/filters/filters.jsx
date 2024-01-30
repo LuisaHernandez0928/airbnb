@@ -6,6 +6,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 import { RadioButton } from "../radioButton/radioButton";
 import { RangePrices } from "../rangePricesFilter/rangePricesFilter";
 import { HabitacionesCamas } from "../habitacionesCamas";
+import { GraphPriceSlider } from "../graphPriceSlider";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
@@ -13,7 +14,7 @@ function Filters({ data }) {
   const filters = (
     <div className={styles.filterLayout}>
       <RadioButton />
-      <RangePrices />
+      <RangePrices data={data} />
       <HabitacionesCamas />
     </div>
   );
