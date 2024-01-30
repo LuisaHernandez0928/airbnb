@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { TitleFilter } from "../titleFilter";
 import { DescriptionFilter } from "../descriptionFilter";
 
-function HabitacionesCamas() {
+function HabitacionesCamas({subtitle}) {
   const [buttonSelected, setButtonSelected] = useState("");
 
   const notifyButton = (e) => {
