@@ -14,25 +14,29 @@ function GraphPriceSlider({ data }) {
   let pricesSorted = 
   airbnbs.sort(function(a, b){return a - b});
 
-  
-  console.log(pricesSorted);
+  let noDuplicates = pricesSorted.filter((item,index)=>{
+    return pricesSorted.indexOf(item) === index;
+  })
+
   let distance = maxValue - minValue;
 
   let barsAmount = 45;
 
-  let range = distance / barsAmount;
+  let range =Math.round(distance / barsAmount); 
   let barsRange = [];
 
-  const crateBarraRange = () => {
+  const createBarraRange = () => {
     for (let i = 0; i <= barsAmount; i++) {
       let dinamyBar=[]
-      dinamyBar.push()
+      dinamyBar.push(noDuplicates[i])
+      dinamyBar.push(noDuplicates[i] + range)
+      barsRange.push(dinamyBar)
     }
+    console.log(barsRange)
   };
 
-  console.log(minValue);
-  console.log(maxValue);
-  return <div className={styles.graphContainer}>Graph</div>;
+
+  return <div className={styles.graphContainer}>{createBarraRange()}</div>;
 }
 
 export { GraphPriceSlider };
