@@ -7,6 +7,7 @@ import { RadioButton } from "../radioButton/radioButton";
 import { RangePrices } from "../rangePricesFilter/rangePricesFilter";
 import { HabitacionesCamas } from "../habitacionesCamas";
 import { Prizes } from "../alojamientosDePrimera";
+import { Properties } from "../propertiesType";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
@@ -17,6 +18,7 @@ function Filters({ data }) {
       <RangePrices data={data} />
       <HabitacionesCamas />
       <Prizes />
+      <Properties />
     </div>
   );
 

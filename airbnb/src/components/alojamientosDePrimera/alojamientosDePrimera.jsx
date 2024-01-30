@@ -39,6 +39,8 @@ function Prizes() {
           "Segun los huéspedes, estos son los alojamientos más populares en Airbnb"
         }
         notifyClick={notifyClick}
+        width={"348px"}
+        height={"154px"}
       />
     </div>
   );

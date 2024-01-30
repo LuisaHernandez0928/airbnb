@@ -1,1 +1,1 @@
-export * from './alojamientosDePrimera'
+export * from './properties'

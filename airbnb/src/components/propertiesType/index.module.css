@@ -7,3 +7,12 @@
   box-sizing: border-box;
   border-top: 1px solid #DDD;
 }
+
+.propertyCardsRow{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
