@@ -17,7 +17,7 @@ function RangePrices({ data }) {
         <GraphPriceSlider data={data} />
         <MultiRangeSlider
           min={0}
-          max={100000}
+          max={500}
           onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
         />
       </div>
