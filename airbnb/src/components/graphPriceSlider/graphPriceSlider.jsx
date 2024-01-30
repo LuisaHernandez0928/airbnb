@@ -34,7 +34,7 @@ function GraphPriceSlider({ data }) {
         minValue= val2;
         barsRange.push([val1, val2]);
     }
-    console.log(barsRange)
+    return barsRange;
   };
 
 
