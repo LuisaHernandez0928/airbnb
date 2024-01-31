@@ -7,5 +7,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #DDD;
+  flex-shrink: 0;
+}
+
+.firstButton{
+  width: fit-content;
+  background-color: white;
+  border: none;
 }

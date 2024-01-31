@@ -12,6 +12,7 @@ import { Services } from "../services/services";
 import { OpcionesReserva } from "../opcionesReserva/opcionesReserva";
 import { Accesibility } from "../accesibility";
 import { Languages } from "../languages/languages";
+import { Footer } from "../footer/footer";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
@@ -27,6 +28,7 @@ function Filters({ data }) {
       <OpcionesReserva />
       <Accesibility />
       <Languages />
+      <Footer />
     </div>
   );
 
