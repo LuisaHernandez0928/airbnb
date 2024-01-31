@@ -13,21 +13,25 @@ import { OpcionesReserva } from "../opcionesReserva/opcionesReserva";
 import { Accesibility } from "../accesibility";
 import { Languages } from "../languages/languages";
 import { Footer } from "../footer/footer";
+import { Header } from "../filterHeader/header";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
 
   const filters = (
     <div className={styles.filterLayout}>
-      <RadioButton />
-      <RangePrices data={data} />
-      <HabitacionesCamas />
-      <Prizes />
-      <Properties />
-      <Services />
-      <OpcionesReserva />
-      <Accesibility />
-      <Languages />
+      <Header />
+      <div className={styles.filterComponents}>
+        <RadioButton />
+        <RangePrices data={data} />
+        <HabitacionesCamas />
+        <Prizes />
+        <Properties />
+        <Services />
+        <OpcionesReserva />
+        <Accesibility />
+        <Languages />
+      </div>
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
 .footerContainer {
-  width: 100%;
+  width: 780px;
   height: 81px;
   padding: 16px 24px;
   box-sizing: border-box;
@@ -9,6 +9,12 @@
   align-items: center;
   border-top: 1px solid #DDD;
   flex-shrink: 0;
+  background-color: white;
+  position: absolute;
+  z-index: 9999;
+  top: 520px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 .firstButton {
