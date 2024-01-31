@@ -1,6 +1,47 @@
-.reservasContainer{
+.reservasContainer {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  height: fit-content;
+  padding: 32px 24px;
+  box-sizing: border-box;
+
+}
+
+.bookingRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  padding: 12px 4px 12px;
+}
+
+.bookingText {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.descriptionFont {
+  text-align: left;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #717171;
+  padding-top: 4px;
+
+}
+
+.titleFont {
+  text-align: left;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #222222;
+  padding-bottom: 8px;
 }

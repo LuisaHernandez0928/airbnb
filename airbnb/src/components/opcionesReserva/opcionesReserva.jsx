@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import {Toggle} from "../toggle"
+import { Toggle } from "../toggle";
 
 function OpcionesReserva() {
   const bookingTitle = [
@@ -16,10 +16,12 @@ function OpcionesReserva() {
   return (
     <div className={styles.reservasContainer}>
       {bookingTitle.map((title, index) => (
-        <div>
-          <div>{title} </div>
-           <div>{bookingDescription[index]} </div>
-           <Toggle />
+        <div className={styles.bookingRow}>
+          <div className={styles.bookingText}>
+            <div className={styles.titleFont}>{title} </div>
+            <div className={styles.descriptionFont}>{bookingDescription[index]} </div>
+          </div>
+          <Toggle />
         </div>
       ))}
     </div>
