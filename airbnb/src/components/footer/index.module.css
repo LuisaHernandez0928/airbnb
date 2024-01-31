@@ -1,4 +1,4 @@
-.footerContainer{
+.footerContainer {
   width: 100%;
   height: 81px;
   padding: 16px 24px;
@@ -11,8 +11,28 @@
   flex-shrink: 0;
 }
 
-.firstButton{
+.firstButton {
   width: fit-content;
   background-color: white;
   border: none;
+  cursor: pointer;
+}
+
+.showAirbnb {
+  display: flex;
+  flex-direction: row;
+  width: 197px;
+  height: 48px;
+  padding: 14px 24px;
+  text-align: center;
+  background-color: #222;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  flex-shrink: 0;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25rem;
 }
