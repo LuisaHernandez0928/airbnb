@@ -39,8 +39,6 @@ function Languages() {
       {showMoreSectios(amenities[0])}
       <div className={showMore ? styles.sectionContainer : styles.noExtend}>
         {showMoreSectios(amenities[1])}
-        {showMoreSectios(amenities[2])}
-        {showMoreSectios(amenities[3])}
       </div>
       <button className={styles.showButton} onClick={() => showServices()}>
         {showMore ? (
