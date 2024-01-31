@@ -9,6 +9,7 @@ import { HabitacionesCamas } from "../habitacionesCamas";
 import { Prizes } from "../alojamientosDePrimera";
 import { Properties } from "../propertiesType";
 import { Services } from "../services/services";
+import { Toggle } from "../toggle/toggle";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
@@ -21,6 +22,7 @@ function Filters({ data }) {
       <Prizes />
       <Properties />
       <Services />
+      <Toggle />
     </div>
   );
 
