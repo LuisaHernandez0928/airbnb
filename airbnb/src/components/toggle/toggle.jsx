@@ -32,7 +32,7 @@ function Toggle() {
     );
   } else {
     return (
-      <div style={{width: "100px", height: "54px"}}>
+      <div style={{width: "fit-content", height: "54px"}}>
         <button
           className={styles.backgroundToggleInactive}
           onClick={() => setActivate(!activate)}
