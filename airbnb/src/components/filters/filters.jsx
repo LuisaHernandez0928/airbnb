@@ -11,6 +11,7 @@ import { Properties } from "../propertiesType";
 import { Services } from "../services/services";
 import { OpcionesReserva } from "../opcionesReserva/opcionesReserva";
 import { Accesibility } from "../accesibility";
+import { Languages } from "../languages/languages";
 
 function Filters({ data }) {
   const [showFilters, setShowFilters] = useState(false);
@@ -25,6 +26,7 @@ function Filters({ data }) {
       <Services />
       <OpcionesReserva />
       <Accesibility />
+      <Languages />
     </div>
   );
 

@@ -35,7 +35,7 @@ function Languages() {
 
   return (
     <div className={styles.mainContainer}>
-      <TitleFilter text={"Idiomas"} />
+      <TitleFilter text={"Idioma del anfitrion"} />
       {showMoreSectios(amenities[0])}
       <div className={showMore ? styles.sectionContainer : styles.noExtend}>
         {showMoreSectios(amenities[1])}
