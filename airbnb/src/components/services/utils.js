@@ -24,6 +24,16 @@ export const serviceOptions = {
     "Chimenea interior",
     "Apto para fumadores",
   ],
-  ubicacion:["Linea de playa", "Costa"],
+  ubicacion: ["Linea de playa", "Costa"],
   seguridad: ["Detectar de humo", "Detector de monóxido de carbono"],
+};
+
+export const subtitles= ["Comodidades", "Caracteristicas", "Ubicación", "Seguridad"]
+
+export const getAllSections = (data) => {
+  const amenities = [];
+  for (const key in data) {
+    amenities.push(data[key]);
+  }
+  return amenities;
 };

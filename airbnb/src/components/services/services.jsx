@@ -1,27 +1,21 @@
 import { useState } from "react";
-import { serviceOptions } from "./utils";
+import { getAllSections, subtitles, serviceOptions } from "./utils";
 import { TitleFilter } from "../titleFilter";
 import { Title } from "../title";
-import styles from "./index.module.css";
-import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
-import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { CheckBox } from "../checkbox";
+import styles from "./index.module.css";
 
 function Services() {
   const [checkReport, setCheckReport] = useState([]);
-  const [acordeon, setAccordeon] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+  const amenities = getAllSections(serviceOptions);
 
-  const notifyClick = (index) => {
-    const copy = [...checkReport];
-    const current = copy[index] ?? false;
-    copy[index] = !current;
-    setCheckReport(copy);
+  const notifyClick = (item) => {
+    setCheckReport([...checkReport, item]);
   };
 
-  console.log(serviceOptions.comodidades);
-
   const showServices = () => {
-    setAccordeon(!acordeon);
+    setShowMore(!showMore);
   };
 
   const showMoreSectios = (data, subtitle) => {
@@ -30,7 +24,7 @@ function Services() {
         <Title text={subtitle} cardFilter={true} />
         <ul className={styles.boxOptions}>
           {data.map((item, index) => (
-            <li key={index} onClick={() => notifyClick(index)}>
+            <li key={index} onClick={() => notifyClick(item)}>
               <CheckBox />
               {item}
             </li>
@@ -40,26 +34,17 @@ function Services() {
     );
   };
 
-  
-  const getAllSections = (data) => {
-    const amenities = [];
-    for (const key in data) {
-      amenities.push(data[key]);
-    }
-    return amenities;
-  };
-  getAllSections(serviceOptions);
-
   return (
     <div className={styles.mainContainer}>
       <TitleFilter text={"Servicios"} />
-      {showMoreSectios(serviceOptions.comodidades, "Comodidades")}
-      <div className={acordeon ? styles.sectionContainer : styles.noExtend}>
-        {showMoreSectios(serviceOptions.caracteristicas, "Caracteristicas")}
-        {showMoreSectios(serviceOptions.seguridad, "Seguridad")}
+      {showMoreSectios(amenities[0], subtitles[0])}
+      <div className={showMore ? styles.sectionContainer : styles.noExtend}>
+        {showMoreSectios(amenities[1], subtitles[1])}
+        {showMoreSectios(amenities[2], subtitles[2])}
+        {showMoreSectios(amenities[3], subtitles[3])}
       </div>
-      <button className={styles.showButton} onClick={(e) => showServices(e)}>
-        {acordeon ? (
+      <button className={styles.showButton} onClick={() => showServices()}>
+        {showMore ? (
           <Title text={"Muestra menos"} cardFilter={true} />
         ) : (
           <Title text={"Muestra más"} cardFilter={true} />
