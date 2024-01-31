@@ -5,11 +5,11 @@ import { Title } from "../title";
 import styles from "./index.module.css";
 import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import { CheckBox } from "../checkbox";
 
 function Services() {
   const [checkReport, setCheckReport] = useState([]);
   const [acordeon, setAccordeon] = useState(false);
-  const [sourceList, setsourceList] = useState(serviceOptions.comodidades);
 
   const notifyClick = (index) => {
     const copy = [...checkReport];
@@ -17,6 +17,8 @@ function Services() {
     copy[index] = !current;
     setCheckReport(copy);
   };
+
+  console.log(serviceOptions.comodidades);
 
   const showServices = () => {
     setAccordeon(!acordeon);
@@ -29,11 +31,7 @@ function Services() {
         <ul className={styles.boxOptions}>
           {data.map((item, index) => (
             <li key={index} onClick={() => notifyClick(index)}>
-              {checkReport[index] ? (
-                <CheckBoxIcon sx={{ fontSize: 30 }} />
-              ) : (
-                <CheckBoxOutlineBlankOutlinedIcon sx={{ fontSize: 30 }} />
-              )}
+              <CheckBox />
               {item}
             </li>
           ))}
@@ -41,6 +39,16 @@ function Services() {
       </div>
     );
   };
+
+  
+  const getAllSections = (data) => {
+    const amenities = [];
+    for (const key in data) {
+      amenities.push(data[key]);
+    }
+    return amenities;
+  };
+  getAllSections(serviceOptions);
 
   return (
     <div className={styles.mainContainer}>

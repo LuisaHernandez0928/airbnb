@@ -24,5 +24,6 @@ export const serviceOptions = {
     "Chimenea interior",
     "Apto para fumadores",
   ],
+  ubicacion:["Linea de playa", "Costa"],
   seguridad: ["Detectar de humo", "Detector de monóxido de carbono"],
 };
