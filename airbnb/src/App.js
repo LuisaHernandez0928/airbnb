@@ -13,13 +13,17 @@ function App() {
   const [recentSearches, setRecentSearches] = useState(DataOfRecentSearch);
   const [headerModalShouldBeClosed, setHeaderModalShouldBeClosed] =
     useState(false);
+  const [filterModalShouldBeClosed, setFilterModalShouldBeClosed] =
+    useState(false);
 
   const notifyModalOpened = () => {
     setHeaderModalShouldBeClosed(false);
+    setFilterModalShouldBeClosed(false);
   };
 
   const closeModal = () => {
     setHeaderModalShouldBeClosed(true);
+    setFilterModalShouldBeClosed(true);
   };
 
   const removeOldDestination = (newDestination) => {
@@ -81,7 +85,11 @@ function App() {
         recentSearches={recentSearches}
         notifyParameters={notifyParameters}
       />
-      <FilterBar data={data} />
+      <FilterBar
+        data={data}
+        notifyModalOpened={notifyModalOpened}
+        shouldBeClosed={filterModalShouldBeClosed}
+      />
       <div className="galeryConrainer">{galleryAirbnb()}</div>
     </div>
   );

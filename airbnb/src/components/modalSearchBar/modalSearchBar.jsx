@@ -15,7 +15,7 @@ function ModalSearchBar({
     }
   };
   return (
-    <div className={selectTypeModal()}>{showParameterInfo(typeParameter)}</div>
+    <div onClick={(e) => e.stopPropagation()} className={selectTypeModal()}>{showParameterInfo(typeParameter)}</div>
   );
 }
 export { ModalSearchBar };

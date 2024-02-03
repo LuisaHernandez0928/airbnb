@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ModalSearchBar } from "../modalSearchBar";
 import { Title } from "../title";
 import styles from "./index.module.css";
@@ -15,9 +15,13 @@ import { Languages } from "../languages/languages";
 import { Footer } from "../footer/footer";
 import { Header } from "../filterHeader/header";
 
-function Filters({ data }) {
+function Filters({ data, notifyModalOpened, shouldBeClosed }) {
   const [showFilters, setShowFilters] = useState(false);
 
+ /* useEffect(() => {
+    if (shouldBeClosed === true) setShowFilters(false);
+  }, [shouldBeClosed]);
+*/
   const filters = (
     <div className={styles.filterLayout}>
       <Header />
@@ -41,7 +45,12 @@ function Filters({ data }) {
   };
 
   const openFilters = () => {
-    setShowFilters(true);
+    setShowFilters(!showFilters);
+    notifyModalOpened();
+  };
+
+  const handleClickOutside = () => {
+    setShowFilters(false);
   };
 
   return (
@@ -51,7 +60,7 @@ function Filters({ data }) {
         <Title text={"Filtros"} />
       </button>
       {showFilters && (
-        <div className={styles.aboveScreen}>
+        <div onClick={() => handleClickOutside()} className={styles.aboveScreen}>
           <ModalSearchBar
             typeParameter={filters}
             showParameterInfo={showInfo}
