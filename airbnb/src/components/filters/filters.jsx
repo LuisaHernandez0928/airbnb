@@ -17,11 +17,19 @@ import { Header } from "../filterHeader/header";
 
 function Filters({ data, notifyModalOpened, shouldBeClosed }) {
   const [showFilters, setShowFilters] = useState(false);
+  const [userFilters, setUserFilters] = useState({
+    tipoAlojamiento: "",
+    priceMin: "",
+    priceMax: "",
+    rooms: "",
+    beds: "",
+    baths: "",
+    guestsFavorite: "",
+    tipoPropiedad: "",
+    services: "",
+    bookingOptions: "",
+  });
 
- /* useEffect(() => {
-    if (shouldBeClosed === true) setShowFilters(false);
-  }, [shouldBeClosed]);
-*/
   const filters = (
     <div className={styles.filterLayout}>
       <Header />
@@ -39,6 +47,22 @@ function Filters({ data, notifyModalOpened, shouldBeClosed }) {
       <Footer />
     </div>
   );
+
+  const handleChanges = (e) => {
+    setUserFilters({
+      ...userFilters,
+      tipoAlojamiento: "",
+      priceMin: "",
+      priceMax: "",
+      rooms: "",
+      beds: "",
+      baths: "",
+      guestsFavorite: "",
+      tipoPropiedad: "",
+      services: "",
+      bookingOptions: "",
+    });
+  };
 
   const showInfo = (content) => {
     return <div>{content}</div>;
@@ -60,7 +84,10 @@ function Filters({ data, notifyModalOpened, shouldBeClosed }) {
         <Title text={"Filtros"} />
       </button>
       {showFilters && (
-        <div onClick={() => handleClickOutside()} className={styles.aboveScreen}>
+        <div
+          onClick={() => handleClickOutside()}
+          className={styles.aboveScreen}
+        >
           <ModalSearchBar
             typeParameter={filters}
             showParameterInfo={showInfo}
