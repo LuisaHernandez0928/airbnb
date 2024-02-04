@@ -18,7 +18,7 @@ function OpcionesReserva() {
     <div className={styles.reservasContainer}>
       <TitleFilter text={"Opciones de reserva"} />
       {bookingTitle.map((title, index) => (
-        <div className={styles.bookingRow}>
+        <div key={index} className={styles.bookingRow}>
           <div className={styles.bookingText}>
             <div className={styles.titleFont}>{title} </div>
             <div className={styles.descriptionFont}>

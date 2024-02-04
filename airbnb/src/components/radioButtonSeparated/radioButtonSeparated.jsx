@@ -2,12 +2,15 @@ import { useState } from "react";
 import { DescriptionFilter } from "../descriptionFilter";
 import styles from "./index.module.css";
 
-function RadioButtonSeparated({ subtitle }) {
+function RadioButtonSeparated({
+  subtitle,
+  notifyRoomChanged,
+}) {
   const [buttonSelected, setButtonSelected] = useState("Cualquiera");
 
   const notifyButton = (e) => {
     setButtonSelected(e.target.innerText);
-    console.log(e.target.innerText);
+    notifyRoomChanged(subtitle, e.target.innerText);
   };
   return (
     <div className={styles.container}>

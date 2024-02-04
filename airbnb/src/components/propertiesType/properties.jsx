@@ -11,7 +11,6 @@ function Properties() {
     setCardSelected(e.target.innerText);
   };
 
-  console.log(cardSelected);
   return (
     <div className={styles.propertiesContainer}>
       <TitleFilter text={"Tipo de propiedad"} />

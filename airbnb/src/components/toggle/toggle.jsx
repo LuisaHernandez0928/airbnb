@@ -3,8 +3,6 @@ import styles from "./index.module.css";
 
 function Toggle() {
   const [activate, setActivate] = useState(false);
-
-  console.log("Toggle");
   if (activate) {
     return (
       <div style={{ width: "fit-content", height: "54px" }}>

@@ -12,7 +12,6 @@ function Prizes() {
     setCardSelected(true);
   }
 
-  console.log(cardSelected)
   return (
     <div className={styles.prizes}>
       <TitleFilter text={"Alojamientos de Primera"} />
