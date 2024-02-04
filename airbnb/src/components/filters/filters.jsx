@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { ModalSearchBar } from "../modalSearchBar";
 import { Title } from "../title";
 import styles from "./index.module.css";
@@ -30,25 +30,6 @@ function Filters({ data, notifyModalOpened, shouldBeClosed }) {
     bookingOptions: "",
   });
 
-  const filters = (
-    <div className={styles.filterLayout}>
-      <Header />
-      <div className={styles.filterComponents}>
-        <RadioButton />
-        <RangePrices data={data} />
-        <HabitacionesCamas />
-        <Prizes />
-        <Properties />
-        <Services />
-        <OpcionesReserva />
-        <Accesibility />
-        <Languages />
-      </div>
-      <Footer />
-    </div>
-  );
-
-  
   const handleAlojamientoChanges = (value) => {
     setUserFilters({
       ...userFilters,
@@ -63,7 +44,6 @@ function Filters({ data, notifyModalOpened, shouldBeClosed }) {
       priceMax: maxValue,
     });
   };
-
 
   const handleHomeChanges = (rooms, beds, baths) => {
     setUserFilters({
@@ -101,6 +81,24 @@ function Filters({ data, notifyModalOpened, shouldBeClosed }) {
       bookingOptions: value,
     });
   };
+
+  const filters = (
+    <div className={styles.filterLayout}>
+      <Header />
+      <div className={styles.filterComponents}>
+        <RadioButton handleAlojamientoChanges={handleAlojamientoChanges} />
+        <RangePrices data={data} handlePriceChanges={handlePriceChanges} />
+        <HabitacionesCamas handleHomeChanges={handleHomeChanges} />
+        <Prizes handleFavoriteChanges={handleFavoriteChanges} />
+        <Properties handlePropertyChanges={handlePropertyChanges} />
+        <Services handleServicesChanges={handleServicesChanges} />
+        <OpcionesReserva handleBookingChanges={handleBookingChanges} />
+        <Accesibility />
+        <Languages />
+      </div>
+      <Footer />
+    </div>
+  );
 
   const showInfo = (content) => {
     return <div>{content}</div>;
