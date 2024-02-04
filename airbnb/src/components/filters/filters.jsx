@@ -24,7 +24,7 @@ function Filters({ data, notifyModalOpened }) {
   const [beds, setBeds] = useState("Cualquiera");
   const [baths, setBaths] = useState("Cualquiera");
   const [favorites, setFavorite] = useState(false);
-  const [tipoPropiedad, setTipoPropiedad] = useState("");
+  const [tipoPropiedad, setTipoPropiedad] = useState([]);
   const [services, setServices] = useState([]);
   const [bookingOptions, setBookingOptions] = useState([]);
 
@@ -80,12 +80,12 @@ function Filters({ data, notifyModalOpened }) {
     setFavorite(value);
   };
 
-  const handlePropertyChanges = (value) => {
+  const handlePropertyChanges = (casa, casaHuespedes, hotel) => {
     /* setUserFilters({
       ...userFilters,
       tipoPropiedad: value,
     });*/
-    setTipoPropiedad(value)
+    setTipoPropiedad([casa, casaHuespedes, hotel]);
   };
 
   const handleServicesChanges = (value) => {
