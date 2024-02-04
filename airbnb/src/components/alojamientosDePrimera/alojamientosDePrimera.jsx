@@ -4,12 +4,13 @@ import { Title } from "../title";
 import { TitleFilter } from "../titleFilter";
 import styles from "./index.module.css";
 
-function Prizes() {
+function Prizes({handleFavoriteChanges}) {
 
-  const [cardSelected, setCardSelected] =  useState("");
+  const [cardSelected, setCardSelected] =  useState(false);
 
   const notifyClick = () =>{
-    setCardSelected(true);
+    setCardSelected(!cardSelected);
+    handleFavoriteChanges(!cardSelected);
   }
 
   return (
