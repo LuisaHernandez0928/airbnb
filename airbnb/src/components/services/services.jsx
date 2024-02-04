@@ -5,7 +5,7 @@ import { Title } from "../title";
 import { CheckBox } from "../checkbox";
 import styles from "./index.module.css";
 
-function Services() {
+function Services({handleServicesChanges}) {
   const [checkReport, setCheckReport] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const amenities = getAllSections(serviceOptions);
@@ -25,7 +25,7 @@ function Services() {
         <ul className={styles.boxOptions}>
           {data.map((item, index) => (
             <li key={index} onClick={() => notifyClick(item)}>
-              <CheckBox />
+              <CheckBox id={item}/>
               {item}
             </li>
           ))}

@@ -2,21 +2,27 @@ import { useState } from "react";
 import styles from "./index.module.css";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
-function CheckBox() {
+function CheckBox({ id }) {
   const [selectedOption, setSelectedOption] = useState(false);
 
+  const notifyAmenity = (e) => {
+    setSelectedOption(!selectedOption);
+    console.log(e);
+  };
   if (!selectedOption) {
     return (
       <div
+        id={id}
         className={styles.checkBox}
-        onClick={() => setSelectedOption(!selectedOption)}
+        onClick={(e) => notifyAmenity(e)}
       ></div>
     );
   } else {
     return (
       <CheckBoxIcon
+        id={id}
         sx={{ fontSize: 30 }}
-        onClick={() => setSelectedOption(!selectedOption)}
+        onClick={(e) => notifyAmenity(e)}
       />
     );
   }
