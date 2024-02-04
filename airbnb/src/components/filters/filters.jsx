@@ -48,19 +48,57 @@ function Filters({ data, notifyModalOpened, shouldBeClosed }) {
     </div>
   );
 
-  const handleChanges = (e) => {
+  
+  const handleAlojamientoChanges = (value) => {
     setUserFilters({
       ...userFilters,
-      tipoAlojamiento: "",
-      priceMin: "",
-      priceMax: "",
-      rooms: "",
-      beds: "",
-      baths: "",
-      guestsFavorite: "",
-      tipoPropiedad: "",
-      services: "",
-      bookingOptions: "",
+      tipoAlojamiento: value,
+    });
+  };
+
+  const handlePriceChanges = (minValue, maxValue) => {
+    setUserFilters({
+      ...userFilters,
+      priceMin: minValue,
+      priceMax: maxValue,
+    });
+  };
+
+
+  const handleHomeChanges = (rooms, beds, baths) => {
+    setUserFilters({
+      ...userFilters,
+      rooms: rooms,
+      beds: beds,
+      baths: baths,
+    });
+  };
+
+  const handleFavoriteChanges = (value) => {
+    setUserFilters({
+      ...userFilters,
+      guestsFavorite: value,
+    });
+  };
+
+  const handlePropertyChanges = (value) => {
+    setUserFilters({
+      ...userFilters,
+      tipoPropiedad: value,
+    });
+  };
+
+  const handleServicesChanges = (value) => {
+    setUserFilters({
+      ...userFilters,
+      services: value,
+    });
+  };
+
+  const handleBookingChanges = (value) => {
+    setUserFilters({
+      ...userFilters,
+      bookingOptions: value,
     });
   };
 
