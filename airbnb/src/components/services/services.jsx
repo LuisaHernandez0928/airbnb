@@ -15,7 +15,6 @@ function Services({handleServicesChanges}) {
     handleServicesChanges([...checkReport, item])
   };
 
-  console.log(checkReport);
   const showServices = () => {
     setShowMore(!showMore);
   };

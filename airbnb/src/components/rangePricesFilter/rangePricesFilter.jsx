@@ -9,8 +9,6 @@ function RangePrices({ data, handlePriceChanges }) {
   const [min, setMin] = useState(20);
   const [max, setMax] = useState(416);
 
-  console.log(min, max);
-
   return (
     <div className={styles.layoutPrices}>
       <div className={styles.headerText}>
