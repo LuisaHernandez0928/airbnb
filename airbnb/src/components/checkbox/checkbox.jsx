@@ -19,11 +19,7 @@ function CheckBox({ id }) {
     );
   } else {
     return (
-      <CheckBoxIcon
-        id={id}
-        sx={{ fontSize: 30 }}
-        onClick={(e) => notifyAmenity(e)}
-      />
+      <CheckBoxIcon sx={{ fontSize: 30 }} onClick={(e) => notifyAmenity(e)} />
     );
   }
 }

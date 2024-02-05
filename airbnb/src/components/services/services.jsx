@@ -5,14 +5,22 @@ import { Title } from "../title";
 import { CheckBox } from "../checkbox";
 import styles from "./index.module.css";
 
-function Services({handleServicesChanges}) {
-  const [checkReport, setCheckReport] = useState([]);
+function Services({ handleServicesChanges }) {
   const [showMore, setShowMore] = useState(false);
   const amenities = getAllSections(serviceOptions);
+  const [servicesChecked, setServicesChecked] = useState([]);
 
-  const notifyClick = (item) => {
-    setCheckReport([...checkReport, item]);
-    handleServicesChanges([...checkReport, item])
+  let filteredServices = [];
+  
+  const notifyClick = (e, item) => {
+    if (e.target.id === item) {
+      setServicesChecked([...servicesChecked, item]);
+      handleServicesChanges([...servicesChecked, item]);
+    } else if (e.target.id === "") {
+      filteredServices = servicesChecked.filter((elem) => elem !== item);
+      handleServicesChanges(filteredServices);
+      setServicesChecked(filteredServices);
+    }
   };
 
   const showServices = () => {
@@ -25,8 +33,8 @@ function Services({handleServicesChanges}) {
         <Title text={subtitle} cardFilter={true} />
         <ul className={styles.boxOptions}>
           {data.map((item, index) => (
-            <li key={index} onClick={() => notifyClick(item)}>
-              <CheckBox id={item}/>
+            <li key={index} onClick={(e) => notifyClick(e, item)}>
+              <CheckBox id={item} />
               {item}
             </li>
           ))}
