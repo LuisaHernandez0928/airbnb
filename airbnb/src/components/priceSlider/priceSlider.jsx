@@ -11,41 +11,51 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
   const range = useRef(null);
 
   const modifyMaxSlider = (e) => {
+    let val;
     if (e.target.value === "") {
-      setMaxVal(max);
+      val = max;
       setMaxInput(e.target.value);
     } else if (e.target.value <= minVal) {
-      setMaxVal(minVal + 1);
+      val = minVal + 1;
       setMaxInput(e.target.value);
     } else if (e.target.value >= max) {
-      setMaxVal(max);
+      val = max;
       setMaxInput(e.target.value);
     } else if (!Number(e.target.value)) {
-      setMaxVal(max);
+      val = max;
       setMaxInput(max);
     } else {
+      val = e.target.value;
       setMaxInput(e.target.value);
-      setMaxVal(e.target.value);
     }
+    setMaxVal(val);
+    onChange({ min: minVal, max: val});
   };
 
   const modifyMinSlider = (e) => {
+    let val;
       if (e.target.value === "") {
+        val = min;
         setMinVal(min);
         setMinInput(e.target.value);
       } else if (e.target.value >= maxVal) {
+        val = maxVal - 1;
         setMinVal(maxVal - 1);
         setMinInput(e.target.value);
       } else if (e.target.value <= min) {
+        val = min;
         setMinVal(min);
         setMinInput(e.target.value);
       } else if (!Number(e.target.value)) {
+        val = min;
         setMinVal(min);
         setMinInput(min);
       } else {
+        val = e.target.value;
         setMinInput(e.target.value);
         setMinVal(e.target.value);
       }
+      onChange({ min: val, max: maxVal});
     };
 
   useEffect(() => {
@@ -81,7 +91,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
 
   // Get min and max values when their state changes
   useEffect(() => {
-    onChange({ min: minVal, max: maxVal});
+    // onChange({ min: minVal, max: maxVal});
   }, [minVal, maxVal, onChange]);
 
   return (
@@ -97,6 +107,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
             const value = Math.min(Number(event.target.value), maxVal - 1);
             setMinVal(value);
             setMinInput(value);
+            onChange({ min: value, max: maxVal});
           }}
           className={styles.thumb + " " + styles.thumbLeft}
         />
@@ -110,6 +121,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
             const value = Math.max(Number(event.target.value), minVal + 1);
             setMaxVal(value);
             setMaxInput(value);
+            onChange({ min: minVal, max: value});
           }}
           className={styles.thumb + " " + styles.thumbRight}
         />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./index.module.css";
 import { TitleFilter } from "../titleFilter";
 import { RadioButtonSeparated } from "../radioButtonSeparated/radioButtonSeparated";
@@ -11,18 +11,17 @@ function HabitacionesCamas({ handleHomeChanges }) {
   const notifyRoomChanged = (subtitle, value) => {
     if (subtitle === "Habitaciones") {
       setRooms(value);
+      handleHomeChanges(value, beds, baths);
     }
     if (subtitle === "Camas") {
       setBeds(value);
+      handleHomeChanges(rooms, value, baths);
     }
     if (subtitle === "Baños") {
       setBaths(value);
+      handleHomeChanges(rooms, beds, value);
     }
   };
-
-  useEffect(() => {
-    handleHomeChanges(rooms, beds, baths);
-  }, [rooms, beds, baths, handleHomeChanges]);
 
   return (
     <div className={styles.containerHabitacionesCamas}>

@@ -1,17 +1,14 @@
 import styles from "./index.module.css";
 import { TitleFilter } from "../titleFilter";
 import { DescriptionFilter } from "../descriptionFilter";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function RadioButton({handleAlojamientoChanges}) {
   const [buttonSelected, setButtonSelected] = useState("Cualquier tipo");
 
-
-  useEffect(() => {
-    handleAlojamientoChanges(buttonSelected)}, [buttonSelected, handleAlojamientoChanges])
-
   const notifyButton = (e) => {
     setButtonSelected(e.target.innerText);
+    handleAlojamientoChanges(e.target.innerText);
   };
   
   return (

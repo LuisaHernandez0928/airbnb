@@ -12,8 +12,10 @@ function Services({handleServicesChanges}) {
 
   const notifyClick = (item) => {
     setCheckReport([...checkReport, item]);
+    handleServicesChanges([...checkReport, item])
   };
 
+  console.log(checkReport);
   const showServices = () => {
     setShowMore(!showMore);
   };
