@@ -17,18 +17,6 @@ import { Header } from "../filterHeader/header";
 
 function Filters({ data, notifyModalOpened }) {
   const [showFilters, setShowFilters] = useState(false);
-  /*
-  const [tipoAlojamiento, setTipoAlojamiento] = useState("Cualquier tipo");
-  const [priceMin, setPriceMin] = useState(20);
-  const [priceMax, setPriceMax] = useState(460);
-  const [rooms, setRooms] = useState("Cualquiera");
-  const [beds, setBeds] = useState("Cualquiera");
-  const [baths, setBaths] = useState("Cualquiera");
-  const [favorites, setFavorite] = useState(false);
-  const [tipoPropiedad, setTipoPropiedad] = useState([]);
-  const [services, setServices] = useState([]);
-  const [bookingOptions, setBookingOptions] = useState([]);
-  */
 
   const [userFilters, setUserFilters] = useState({
     tipoAlojamiento: "",
@@ -42,26 +30,20 @@ function Filters({ data, notifyModalOpened }) {
     services: "",
     bookingOptions: "",
   });
-  
 
   const handleAlojamientoChanges = (value) => {
     setUserFilters((prevFilters) => ({
       ...prevFilters,
       tipoAlojamiento: value,
     }));
-
-    // setTipoAlojamiento(value);
   };
 
   const handlePriceChanges = (minValue, maxValue) => {
     setUserFilters({
       ...userFilters,
-          priceMin: minValue,
-          priceMax: maxValue,
+      priceMin: minValue,
+      priceMax: maxValue,
     });
-    
-    // setPriceMin(minValue);
-    // setPriceMax(maxValue);
   };
 
   const handleHomeChanges = (rooms, beds, baths) => {
@@ -71,25 +53,18 @@ function Filters({ data, notifyModalOpened }) {
       beds: beds,
       baths: baths,
     });
-    // setRooms(rooms);
-    // setBeds(beds);
-    // setBaths(baths);
   };
-
   const handleFavoriteChanges = (value) => {
     setUserFilters({
       ...userFilters,
       guestsFavorite: value,
     });
-    // setFavorite(value);
   };
-
   const handlePropertyChanges = (casa, casaHuespedes, hotel) => {
     /* setUserFilters({
       ...userFilters,
       tipoPropiedad: value,
     });*/
-    // setTipoPropiedad([casa, casaHuespedes, hotel]);
   };
 
   const handleServicesChanges = (value) => {
@@ -97,31 +72,13 @@ function Filters({ data, notifyModalOpened }) {
       ...userFilters,
       services: value,
     });
-    // setServices(value)
   };
-
   const handleBookingChanges = (value) => {
     setUserFilters({
       ...userFilters,
       bookingOptions: value,
     });
-   // setBookingOptions(value)
   };
-
-  /*
-  const userFilters = {
-    tipoAlojamiento: tipoAlojamiento,
-    priceMin: priceMin,
-    priceMax: priceMax,
-    rooms: rooms,
-    beds: beds,
-    baths: baths,
-    guestsFavorite: favorites,
-    tipoPropiedad: tipoPropiedad,
-    services: services,
-    bookingOptions: bookingOptions,
-  };
-  */
 
   console.log(userFilters);
   const filters = (
