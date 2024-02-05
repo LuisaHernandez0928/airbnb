@@ -3,10 +3,8 @@ import { Toggle } from "../toggle";
 import { TitleFilter } from "../titleFilter";
 import { useState } from "react";
 
-function OpcionesReserva({handleBookingChanges}) {
-
+function OpcionesReserva({ handleBookingChanges }) {
   const [selectedOptions, setSelectedOptions] = useState([]);
-
 
   const bookingTitle = [
     "Reserva inmediata",
@@ -22,12 +20,16 @@ function OpcionesReserva({handleBookingChanges}) {
   let filteredServices = [];
 
   const notifyClick = (item) => {
-   
-    if(selectedOptions.find((elem) => elem === item)){
+    console.log(item);
+    console.log(selectedOptions);
+    if ((selectedOptions.find((elem) => elem === item)+1)) {
+      console.log(item);
       filteredServices = selectedOptions.filter((elem) => elem !== item);
       handleBookingChanges(filteredServices);
       setSelectedOptions(filteredServices);
-    }else{
+    } else {
+      console.log(item);
+      console.log(selectedOptions);
       setSelectedOptions([...selectedOptions, item]);
       handleBookingChanges([...selectedOptions, item]);
     }
@@ -41,11 +43,11 @@ function OpcionesReserva({handleBookingChanges}) {
           <div className={styles.bookingText}>
             <div className={styles.titleFont}>{title} </div>
             <div className={styles.descriptionFont}>
-              {bookingDescription[index]}{" "}
+              {bookingDescription[index]}
             </div>
           </div>
-          <div className={styles.toggle} onClick={(e) => notifyClick(index)} >
-            <Toggle id={index}/>
+          <div className={styles.toggle}>
+            <Toggle id={index} notifyClick={notifyClick} />
           </div>
         </div>
       ))}

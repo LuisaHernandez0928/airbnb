@@ -1,15 +1,22 @@
 import { useState } from "react";
 import styles from "./index.module.css";
 
-function Toggle() {
+function Toggle({ id, notifyClick }) {
   const [activate, setActivate] = useState(false);
+
+  const notifyToggle = (id) => {
+    notifyClick(id);
+    console.log(id);
+    setActivate(!activate);
+  };
+
   if (activate) {
     return (
-      <div style={{ width: "fit-content", height: "54px" }}>
-        <button
-          className={styles.backgroundToggleActivate}
-          onClick={() => setActivate(!activate)}
-        >
+      <div
+        style={{ width: "fit-content", height: "54px" }}
+        onClick={() => notifyToggle(id)}
+      >
+        <button className={styles.backgroundToggleActivate}>
           <div className={styles.frontToggleActive}>
             <svg
               viewBox="0 0 12 12"
@@ -32,11 +39,11 @@ function Toggle() {
     );
   } else {
     return (
-      <div style={{ width: "fit-content", height: "54px" }}>
-        <button
-          className={styles.backgroundToggleInactive}
-          onClick={() => setActivate(!activate)}
-        >
+      <div
+        style={{ width: "fit-content", height: "54px" }}
+        onClick={() => notifyToggle(id)}
+      >
+        <button className={styles.backgroundToggleInactive}>
           <div className={styles.frontToggleInactive}></div>
         </button>
       </div>
