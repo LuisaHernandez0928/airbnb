@@ -61,10 +61,10 @@ function Filters({ data, notifyModalOpened }) {
     });
   };
   const handlePropertyChanges = (casa, casaHuespedes, hotel) => {
-    /* setUserFilters({
+    setUserFilters({
       ...userFilters,
-      tipoPropiedad: value,
-    });*/
+      tipoPropiedad:[casa, casaHuespedes, hotel]
+    });
   };
 
   const handleServicesChanges = (value) => {

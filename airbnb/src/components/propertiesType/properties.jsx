@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CardFilter } from "../cardFilter";
 import { Title } from "../title";
 import { TitleFilter } from "../titleFilter";
@@ -12,16 +12,18 @@ function Properties({ handlePropertyChanges }) {
   const notifyClick = (e) => {
     if (e.target.innerText === "Casa") {
       setCasa(!casa);
+      handlePropertyChanges(!casa, casaHuespedes, hotel);
     }
     if (e.target.innerText === "Casa de huespedes") {
       setCasaHuespedes(!casaHuespedes);
+      handlePropertyChanges(casa, !casaHuespedes, hotel);
     }
     if (e.target.innerText === "Hotel") {
       setHotel(!hotel);
+      handlePropertyChanges(casa, casaHuespedes, !hotel);
     }
   };
 
-useEffect(() => {handlePropertyChanges(casa, casaHuespedes, hotel)} , [casa, casaHuespedes,hotel] )
   return (
     <div className={styles.propertiesContainer}>
       <TitleFilter text={"Tipo de propiedad"} />
