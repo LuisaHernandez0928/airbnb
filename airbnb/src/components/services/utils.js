@@ -25,7 +25,7 @@ export const serviceOptions = {
     "Apto para fumadores",
   ],
   ubicacion: ["Linea de playa", "Costa"],
-  seguridad: ["Detectar de humo", "Detector de monóxido de carbono"],
+  seguridad: ["Detector de humo", "Detector de monóxido de carbono"],
 };
 
 export const subtitles= ["Comodidades", "Caracteristicas", "Ubicación", "Seguridad"]
