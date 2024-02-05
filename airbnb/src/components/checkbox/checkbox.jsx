@@ -7,7 +7,6 @@ function CheckBox({ id }) {
 
   const notifyAmenity = (e) => {
     setSelectedOption(!selectedOption);
-    console.log(e);
   };
   if (!selectedOption) {
     return (
