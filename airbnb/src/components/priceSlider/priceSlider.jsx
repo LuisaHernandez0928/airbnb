@@ -101,7 +101,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
           type="range"
           min={min}
           max={max}
-          step={9}
+          step={5}
           value={minVal}
           onChange={(event) => {
             const value = Math.min(Number(event.target.value), maxVal - 1);
@@ -115,7 +115,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
           type="range"
           min={min}
           max={max}
-          step={9}
+          step={5}
           value={maxVal}
           onChange={(event) => {
             const value = Math.max(Number(event.target.value), minVal + 1);

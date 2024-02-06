@@ -9,7 +9,7 @@ import {
 
 import styles from "./index.module.css";
 
-const BARS_AMOUNT = 43;
+const BARS_AMOUNT = 45;
 
 function GraphPriceSlider({ data, minPrice, maxPrice }) {
   const airbnbPrices = getAirbnbPrices(data);

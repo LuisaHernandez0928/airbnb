@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 
 function RangePrices({ data, handlePriceChanges }) {
   const [min, setMin] = useState(20);
-  const [max, setMax] = useState(416);
+  const [max, setMax] = useState(460);
 
   return (
     <div className={styles.layoutPrices}>
@@ -21,7 +21,7 @@ function RangePrices({ data, handlePriceChanges }) {
         <GraphPriceSlider data={data} minPrice={Number(min)} maxPrice={Number(max)}/>
         <MultiRangeSlider
           min={20}
-          max={416}
+          max={460}
           onChange={({ min, max }) => {
             setMin(min);
             setMax(max);
