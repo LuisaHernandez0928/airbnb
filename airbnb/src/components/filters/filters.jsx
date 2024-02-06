@@ -195,13 +195,61 @@ function Filters({ data, notifyModalOpened }) {
     }
   };
 
+  const propertyTypeFilter = (airbnb, propertiesSelected) => {
+    if (
+      (propertiesSelected.tipoPropiedad[0] &&
+        propertiesSelected.tipoPropiedad[1] &&
+        propertiesSelected.tipoPropiedad[2]) ||
+      (!propertiesSelected.tipoPropiedad[0] &&
+        !propertiesSelected.tipoPropiedad[1] &&
+        !propertiesSelected.tipoPropiedad[2])
+    ) {
+      return true;
+    } else if (
+      propertiesSelected.tipoPropiedad[0] === true &&
+      propertiesSelected.tipoPropiedad[1] === true &&
+      (airbnb.tipoPropiedad === "Casa" ||
+        airbnb.tipoPropiedad === "Casa de huespedes")
+    ) {
+      return true;
+    } else if (
+      propertiesSelected.tipoPropiedad[0] === true &&
+      propertiesSelected.tipoPropiedad[2] === true &&
+      (airbnb.tipoPropiedad === "Casa" || airbnb.tipoPropiedad === "Hotel")
+    ) {
+      return true;
+    } else if (
+      propertiesSelected.tipoPropiedad[1] === true &&
+      propertiesSelected.tipoPropiedad[2] === true &&
+      (airbnb.tipoPropiedad === "Casa de huespedes" ||
+        airbnb.tipoPropiedad === "Hotel")
+    ) {
+      return true;
+    } else if (
+      propertiesSelected.tipoPropiedad[0] === true &&
+      airbnb.tipoPropiedad === "Casa"
+    ) {
+      return true;
+    } else if (
+      propertiesSelected.tipoPropiedad[1] === true &&
+      airbnb.tipoPropiedad === "Casa de huespedes"
+    ) {
+      return true;
+    } else if (
+      propertiesSelected.tipoPropiedad[2] === true &&
+      airbnb.tipoPropiedad === "Hotel"
+    ) {
+      return true;
+    }
+  };
+
   /*  console.log(
     dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters))
   );
 */
 
   console.log(
-    dataArray.filter((airbnb) => favoritesFilter(airbnb, userFilters))
+    dataArray.filter((airbnb) => propertyTypeFilter(airbnb, userFilters))
   );
   return (
     <div className={styles.filtersContainer}>

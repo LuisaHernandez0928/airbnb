@@ -1260,7 +1260,7 @@
     "baths": 2,
     "bathKind": "public",
     "tipoAlojamiento": "Habitacion",
-    "tipoPropiedad": "Casa",
+    "tipoPropiedad": "Hotel",
     "services": [
       {
         "name": "Wifi",
