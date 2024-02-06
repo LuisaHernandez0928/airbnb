@@ -1616,28 +1616,28 @@
       "https://a0.muscache.com/im/pictures/59911802-7ff7-47d9-936c-7742b5db61b4.jpg?im_w=1200",
       "https://a0.muscache.com/im/pictures/33896014/65be93d7_original.jpg?im_w=1200"
     ],
-    "description": "Choza en Balian Beach, Indonesia",
+    "description": "Habitacion en Monaco",
     "guestsFavorite": true,
-    "score": 4.87,
+    "score": 4.92,
     "numReviews": 354,
-    "beds": 4,
-    "rooms": 3,
-    "peopleCapacity": 7,
-    "baths": 2,
+    "beds": 1,
+    "rooms": 1,
+    "peopleCapacity": 2,
+    "baths": 1,
     "bathKind": "private",
-    "tipoAlojamiento": "Alojamiento entero",
+    "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa",
     "services": [
       {
-        "name": "Lavadora",
+        "name": "Dectetor de humo",
         "value": true
       },
       {
-        "name": "Piscina",
+        "name": "Secadora",
         "value": true
       },
       {
-        "name": "Parrilla",
+        "name": "Desayuno",
         "value": true
       }
     ],
@@ -1664,23 +1664,23 @@
     "availability": [
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 50
+        "price": 350
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
+        "price": 280
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 48
+        "price": 248
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 53
+        "price": 253
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 70
+        "price": 270
       }
     ]
   },
@@ -1690,16 +1690,16 @@
       "https://a0.muscache.com/im/pictures/59911802-7ff7-47d9-936c-7742b5db61b4.jpg?im_w=1200",
       "https://a0.muscache.com/im/pictures/33896014/65be93d7_original.jpg?im_w=1200"
     ],
-    "description": "Choza en Balian Beach, Indonesia",
+    "description": "Habitacion en Londres",
     "guestsFavorite": true,
-    "score": 4.87,
+    "score": 4.97,
     "numReviews": 354,
-    "beds": 4,
-    "rooms": 3,
+    "beds": 2,
+    "rooms": 1,
     "peopleCapacity": 7,
     "baths": 2,
     "bathKind": "private",
-    "tipoAlojamiento": "Alojamiento entero",
+    "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa",
     "services": [
       {
@@ -1738,23 +1738,23 @@
     "availability": [
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 60
+        "price": 460
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
+        "price": 380
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 52
+        "price": 452
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 56
+        "price": 356
       },
       {
         "date": ["2024-03-17", "2024-04-01"],
-        "price": 55
+        "price": 255
       }
     ]
   }

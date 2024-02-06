@@ -187,13 +187,21 @@ function Filters({ data, notifyModalOpened }) {
     }
   };
 
+  const favoritesFilter = (airbnb, favoriteSelected) => {
+    if (favoriteSelected.guestsFavorite && airbnb.guestsFavorite) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   /*  console.log(
-    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters))
+    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters))
   );
 */
 
   console.log(
-    dataArray.filter((airbnb) => bedsQuantityFilter(airbnb, userFilters))
+    dataArray.filter((airbnb) => favoritesFilter(airbnb, userFilters))
   );
   return (
     <div className={styles.filtersContainer}>
