@@ -194,7 +194,7 @@
         "value": true
       },
       {
-        "name": "Piscina",
+        "name": "Gimnasio",
         "value": true
       },
       {
@@ -757,7 +757,7 @@
         "value": true
       },
       {
-        "name": "Piscina",
+        "name": "Gimnasio",
         "value": true
       },
       {
@@ -919,6 +919,10 @@
       {
         "name": "Zona de trabajo",
         "value": true
+      },
+      {
+        "name": "Cama King",
+        "value": true
       }
     ],
     "bookingOptions": [
@@ -990,11 +994,15 @@
         "value": true
       },
       {
-        "name": "Piscina",
+        "name": "Gimnasio",
         "value": true
       },
       {
-        "name": "Parrilla",
+        "name": "Jacuzzi",
+        "value": true
+      },
+      {
+        "name": "Cama King",
         "value": true
       }
     ],
@@ -1064,7 +1072,7 @@
         "value": true
       },
       {
-        "name": "Piscina",
+        "name": "Gimnasio",
         "value": true
       },
       {
@@ -1722,11 +1730,15 @@
         "value": true
       },
       {
-        "name": "Piscina",
+        "name": "Plancha",
         "value": true
       },
       {
-        "name": "Parrilla",
+        "name": "Cuna",
+        "value": true
+      },
+      {
+        "name": "Jacuzzi",
         "value": true
       }
     ],

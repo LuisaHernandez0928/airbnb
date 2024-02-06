@@ -300,7 +300,7 @@ function Filters({ data, notifyModalOpened }) {
     }
   };
 
-  /* const dataArray = Object.values(data);
+  const dataArray = Object.values(data);
   console.log(
     dataArray.filter(
       (airbnb) =>
@@ -318,26 +318,6 @@ function Filters({ data, notifyModalOpened }) {
         propertyTypeFilter(airbnb, userFilters) &&
         servicesFilter(airbnb, userFilters, getAirbnbServices) &&
         bookingOptionsFilter(airbnb, userFilters, getBookingOptions)
-    )
-  );
-*/
-  const dataArray = Object.values(data);
-  console.log(
-    dataArray.filter(
-      (airbnb) =>
-        priceRangeFilter(
-          airbnb,
-          userFilters.priceMin,
-          userFilters.priceMax,
-          getAirbnbPrices
-        ) &&
-        accommodationTypeFilter(airbnb, userFilters) &&
-        roomsQuantityFilter(airbnb, userFilters) &&
-        bedsQuantityFilter(airbnb, userFilters) &&
-        bathsQuantityFilter(airbnb, userFilters) &&
-        favoritesFilter(airbnb, userFilters) &&
-        propertyTypeFilter(airbnb, userFilters) &&
-        servicesFilter(airbnb, userFilters, getAirbnbServices)
     )
   );
 

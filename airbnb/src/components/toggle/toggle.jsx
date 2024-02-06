@@ -6,7 +6,6 @@ function Toggle({ id, notifyClick }) {
 
   const notifyToggle = (id) => {
     notifyClick(id);
-    console.log(id);
     setActivate(!activate);
   };
 
