@@ -193,7 +193,7 @@ function Filters({ data, notifyModalOpened }) {
 */
 
   console.log(
-    dataArray.filter((airbnb) => roomsQuantityFilter(airbnb, userFilters))
+    dataArray.filter((airbnb) => bedsQuantityFilter(airbnb, userFilters))
   );
   return (
     <div className={styles.filtersContainer}>
