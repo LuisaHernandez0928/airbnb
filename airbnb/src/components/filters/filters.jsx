@@ -259,7 +259,6 @@ function Filters({ data, notifyModalOpened }) {
       selected.includes(element)
     );
 
-    console.log(intersection);
     if (intersection.length === selected.length) {
       return true;
     } else {
@@ -268,15 +267,17 @@ function Filters({ data, notifyModalOpened }) {
   };
 
   /*  console.log(
-    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters) && propertyTypeFilter(airbnb, userFilters))
+    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters) && propertyTypeFilter(airbnb, userFilters) && servicesFilter(airbnb, userFilters, getAirbnbServices))
   );
 */
 
-  console.log(
+console.log(userFilters);
+
+  /*console.log(
     dataArray.filter((airbnb) =>
       servicesFilter(airbnb, userFilters, getAirbnbServices)
     )
-  );
+  );*/
   return (
     <div className={styles.filtersContainer}>
       <button onClick={openFilters}>
