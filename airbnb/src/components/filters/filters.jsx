@@ -114,21 +114,50 @@ function Filters({ data, notifyModalOpened }) {
     setShowFilters(false);
   };
 
+  const dataArray = Object.values(data);
+
   const accommodationTypeFilter = (airbnbType, typeSelected) => {
-    if (typeSelected === "Cualquier tipo" || typeSelected === airbnbType) {
+    if (
+      typeSelected.tipoAlojamiento === "Cualquier tipo" ||
+      typeSelected.tipoAlojamiento === airbnbType.tipoAlojamiento
+    ) {
       return true;
     } else {
       return false;
     }
   };
 
-  const dataArray = Object.values(data);
-  console.log(userFilters.tipoAlojamiento);
+  const getAirbnbPrices = (data) => {
+    const airbnbPrice = [];
+    const airbnbAvailability = data.availability;
+    for (const availabilityKey in airbnbAvailability) {
+      airbnbPrice.push(airbnbAvailability[availabilityKey].price);
+    }
+    return airbnbPrice;
+  };
 
-  console.log(
-    dataArray.filter((airbnb) => accommodationTypeFilter(airbnb.tipoAlojamiento , userFilters.tipoAlojamiento))
+  const priceRangeFilter = (
+    airbnb,
+    priceMinSelected,
+    priceMaxSelected,
+    pricesEachAirbnb
+  ) => {
+    let pricesArray = pricesEachAirbnb(airbnb);
+    let priceMatch = pricesArray.find(
+      (elem) => elem >= priceMinSelected && elem <= priceMaxSelected
+    );
+
+    if (priceMatch) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  /*  console.log(
+    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters))
   );
-
+*/
   return (
     <div className={styles.filtersContainer}>
       <button onClick={openFilters}>

@@ -46,5 +46,3 @@ interface Airbnb {
 type AirbnbList = Record<string, Airbnb>;
 
 export const mData: AirbnbList = data;
-
-console.log(mData);
