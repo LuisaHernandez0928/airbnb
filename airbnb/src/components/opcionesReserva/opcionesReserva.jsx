@@ -20,16 +20,11 @@ function OpcionesReserva({ handleBookingChanges }) {
   let filteredServices = [];
 
   const notifyClick = (item) => {
-    console.log(item);
-    console.log(selectedOptions);
-    if ((selectedOptions.find((elem) => elem === item)+1)) {
-      console.log(item);
+    if (selectedOptions.find((elem) => elem === item) + 1) {
       filteredServices = selectedOptions.filter((elem) => elem !== item);
       handleBookingChanges(filteredServices);
       setSelectedOptions(filteredServices);
     } else {
-      console.log(item);
-      console.log(selectedOptions);
       setSelectedOptions([...selectedOptions, item]);
       handleBookingChanges([...selectedOptions, item]);
     }
