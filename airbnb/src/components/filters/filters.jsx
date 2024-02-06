@@ -114,8 +114,6 @@ function Filters({ data, notifyModalOpened }) {
     setShowFilters(false);
   };
 
-  const dataArray = Object.values(data);
-
   const accommodationTypeFilter = (airbnbType, typeSelected) => {
     if (
       typeSelected.tipoAlojamiento === "Cualquier tipo" ||
@@ -189,6 +187,8 @@ function Filters({ data, notifyModalOpened }) {
 
   const favoritesFilter = (airbnb, favoriteSelected) => {
     if (favoriteSelected.guestsFavorite && airbnb.guestsFavorite) {
+      return true;
+    } else if (!favoriteSelected.guestsFavorite) {
       return true;
     } else {
       return false;
@@ -293,10 +293,14 @@ function Filters({ data, notifyModalOpened }) {
 
     if (intersection.length === selected.length) {
       return true;
+    } else if (selected.length === 0) {
+      return true;
     } else {
       return false;
     }
   };
+
+  /* const dataArray = Object.values(data);
   console.log(
     dataArray.filter(
       (airbnb) =>
@@ -314,6 +318,26 @@ function Filters({ data, notifyModalOpened }) {
         propertyTypeFilter(airbnb, userFilters) &&
         servicesFilter(airbnb, userFilters, getAirbnbServices) &&
         bookingOptionsFilter(airbnb, userFilters, getBookingOptions)
+    )
+  );
+*/
+  const dataArray = Object.values(data);
+  console.log(
+    dataArray.filter(
+      (airbnb) =>
+        priceRangeFilter(
+          airbnb,
+          userFilters.priceMin,
+          userFilters.priceMax,
+          getAirbnbPrices
+        ) &&
+        accommodationTypeFilter(airbnb, userFilters) &&
+        roomsQuantityFilter(airbnb, userFilters) &&
+        bedsQuantityFilter(airbnb, userFilters) &&
+        bathsQuantityFilter(airbnb, userFilters) &&
+        favoritesFilter(airbnb, userFilters) &&
+        propertyTypeFilter(airbnb, userFilters) &&
+        servicesFilter(airbnb, userFilters, getAirbnbServices)
     )
   );
 

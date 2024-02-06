@@ -430,7 +430,7 @@
     "baths": 1,
     "bathKind": "private",
     "tipoAlojamiento": "Habitacion",
-    "tipoPropiedad": "Apartamento",
+    "tipoPropiedad": "Casa",
     "services": [
       {
         "name": "Camaras de seguridad",
@@ -750,7 +750,7 @@
     "baths": 2,
     "bathKind": "private",
     "tipoAlojamiento": "Alojamiento entero",
-    "tipoPropiedad": "Apartamento",
+    "tipoPropiedad": "Casa de huespedes",
     "services": [
       {
         "name": "Wifi",
@@ -761,7 +761,11 @@
         "value": true
       },
       {
-        "name": "Parrilla",
+        "name": "Secadora de pelo",
+        "value": true
+      },
+      {
+        "name": "Cama King",
         "value": true
       }
     ],
