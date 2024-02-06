@@ -19,16 +19,16 @@ function Filters({ data, notifyModalOpened }) {
   const [showFilters, setShowFilters] = useState(false);
 
   const [userFilters, setUserFilters] = useState({
-    tipoAlojamiento: "",
-    priceMin: "",
-    priceMax: "",
-    rooms: "",
-    beds: "",
-    baths: "",
-    guestsFavorite: "",
-    tipoPropiedad: "",
-    services: "",
-    bookingOptions: "",
+    tipoAlojamiento: "Cualquier tipo",
+    priceMin: 20,
+    priceMax: 416,
+    rooms: "Cualquiera",
+    beds: "Cualquiera",
+    baths: "Cualquiera",
+    guestsFavorite: false,
+    tipoPropiedad: [],
+    services: [],
+    bookingOptions: [],
   });
 
   const handleAlojamientoChanges = (value) => {
@@ -63,7 +63,7 @@ function Filters({ data, notifyModalOpened }) {
   const handlePropertyChanges = (casa, casaHuespedes, hotel) => {
     setUserFilters({
       ...userFilters,
-      tipoPropiedad:[casa, casaHuespedes, hotel]
+      tipoPropiedad: [casa, casaHuespedes, hotel],
     });
   };
 
@@ -80,7 +80,6 @@ function Filters({ data, notifyModalOpened }) {
     });
   };
 
-  console.log(userFilters);
   const filters = (
     <div className={styles.filterLayout}>
       <Header />
@@ -114,6 +113,21 @@ function Filters({ data, notifyModalOpened }) {
   const handleClickOutside = () => {
     setShowFilters(false);
   };
+
+  const accommodationTypeFilter = (airbnbType, typeSelected) => {
+    if (typeSelected === "Cualquier tipo" || typeSelected === airbnbType) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const dataArray = Object.values(data);
+  console.log(userFilters.tipoAlojamiento);
+
+  console.log(
+    dataArray.filter((airbnb) => accommodationTypeFilter(airbnb.tipoAlojamiento , userFilters.tipoAlojamiento))
+  );
 
   return (
     <div className={styles.filtersContainer}>

@@ -77,6 +77,7 @@ function App() {
     return gallery;
   };
 
+
   return (
     <div className="App" onClick={() => closeModal()}>
       <Header
