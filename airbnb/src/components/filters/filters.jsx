@@ -266,18 +266,46 @@ function Filters({ data, notifyModalOpened }) {
     }
   };
 
+  const getBookingOptions = (data) => {
+    const bookingOptions = [];
+    const airbnbAvailability = data.bookingOptions;
+    for (const availabilityKey in airbnbAvailability) {
+      bookingOptions.push(airbnbAvailability[availabilityKey].name);
+    }
+    return bookingOptions;
+  };
+
+  const conversionBookingOptions = (data) => { 
+    if(data === "Reserva inmediata") return data = 0;
+    if(data === "Autonomous checking") return data = 1;
+    if(data === "Pets") return data = 2;
+  }
+  const bookingOptionsFilter = (airbnb, optionsSelected, optionsEachAirbnb) => {
+    let bookingOptionsArray = optionsEachAirbnb(airbnb);
+    let selected = optionsSelected.bookingOptions;
+
+    let convertedArray = bookingOptionsArray.map((option) => conversionBookingOptions(option));
+    let intersection = convertedArray.filter((element) =>
+    selected.includes(element)
+  );
+
+  if (intersection.length === selected.length) {
+    return true;
+  } else {
+    return false;
+  }
+  };
   /*  console.log(
-    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters) && propertyTypeFilter(airbnb, userFilters) && servicesFilter(airbnb, userFilters, getAirbnbServices))
+    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters) && propertyTypeFilter(airbnb, userFilters) && servicesFilter(airbnb, userFilters, getAirbnbServices) && bookingOptionsFilter(airbnb, userFilters, getBookingOptions))
   );
 */
 
-console.log(userFilters);
 
-  /*console.log(
+console.log(
     dataArray.filter((airbnb) =>
-      servicesFilter(airbnb, userFilters, getAirbnbServices)
+      bookingOptionsFilter(airbnb, userFilters, getBookingOptions)
     )
-  );*/
+  );
   return (
     <div className={styles.filtersContainer}>
       <button onClick={openFilters}>

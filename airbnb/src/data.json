@@ -773,6 +773,10 @@
       {
         "name": "Pets",
         "value": true
+      },
+      {
+        "name": "Autonomous checking",
+        "value": true
       }
     ],
     "location": {
@@ -842,6 +846,10 @@
     "bookingOptions": [
       {
         "name": "Reserva inmediata",
+        "value": true
+      },
+      {
+        "name": "Pets",
         "value": true
       }
     ],
@@ -916,6 +924,9 @@
       },
       {
         "name": "Pets",
+        "value": true
+      },{
+        "name": "Reserva inmediata",
         "value": true
       }
     ],
@@ -1352,7 +1363,7 @@
     "bookingOptions": [
       {
         "name": "Reserva inmediata",
-        "value": false
+        "value": true
       }
     ],
     "location": {
