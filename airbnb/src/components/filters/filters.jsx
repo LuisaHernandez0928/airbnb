@@ -243,13 +243,39 @@ function Filters({ data, notifyModalOpened }) {
     }
   };
 
+  const getAirbnbServices = (data) => {
+    const airbnbServices = [];
+    const airbnbAvailability = data.services;
+    for (const availabilityKey in airbnbAvailability) {
+      airbnbServices.push(airbnbAvailability[availabilityKey].name);
+    }
+    return airbnbServices;
+  };
+
+  const servicesFilter = (airbnb, servicesSelected, servicesEachAirbnb) => {
+    let servicesArray = servicesEachAirbnb(airbnb);
+    let selected = servicesSelected.services;
+    let intersection = servicesArray.filter((element) =>
+      selected.includes(element)
+    );
+
+    console.log(intersection);
+    if (intersection.length === selected.length) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   /*  console.log(
-    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters))
+    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters) && favoritesFilter(airbnb, userFilters) && propertyTypeFilter(airbnb, userFilters))
   );
 */
 
   console.log(
-    dataArray.filter((airbnb) => propertyTypeFilter(airbnb, userFilters))
+    dataArray.filter((airbnb) =>
+      servicesFilter(airbnb, userFilters, getAirbnbServices)
+    )
   );
   return (
     <div className={styles.filtersContainer}>
