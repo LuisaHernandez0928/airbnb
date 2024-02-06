@@ -154,10 +154,47 @@ function Filters({ data, notifyModalOpened }) {
     }
   };
 
+  const roomsQuantityFilter = (airbnb, quantitySelected) => {
+    if (
+      quantitySelected.rooms === "Cualquiera" ||
+      quantitySelected.rooms <= airbnb.rooms
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const bedsQuantityFilter = (airbnb, quantitySelected) => {
+    if (
+      quantitySelected.beds === "Cualquiera" ||
+      quantitySelected.beds <= airbnb.beds
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const bathsQuantityFilter = (airbnb, quantitySelected) => {
+    if (
+      quantitySelected.baths === "Cualquiera" ||
+      quantitySelected.baths <= airbnb.baths
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   /*  console.log(
-    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters))
+    dataArray.filter((airbnb) => priceRangeFilter(airbnb, userFilters.priceMin, userFilters.priceMax, getAirbnbPrices) && accommodationTypeFilter(airbnb,userFilters) && roomsQuantityFilter(airbnb,userFilters) && bedsQuantityFilter(airbnb,userFilters) && bathsQuantityFilter(airbnb,userFilters))
   );
 */
+
+  console.log(
+    dataArray.filter((airbnb) => roomsQuantityFilter(airbnb, userFilters))
+  );
   return (
     <div className={styles.filtersContainer}>
       <button onClick={openFilters}>
