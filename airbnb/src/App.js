@@ -9,6 +9,13 @@ import { Card } from "./components/card/card";
 const dataLocal = localStorage.getItem("recentSearches");
 const DataOfRecentSearch = dataLocal ? JSON.parse(dataLocal) : [];
 
+const opts = ["Casas rurales","Cabaña","Piscinas increibles","Ciudades famosas","Parques nacionales","Frente al lago","Esqui","Vistas increibles","Casas historicas","Playa","Mansiones","Minicasa","Bed and breakfast","Novedad","Populares","Diseño","Autosuficiente","Tropical","Casa del arbol","Islas"];
+
+
+
+for (const key in data) data[key].kind = opts[parseInt(Math.random() * opts.length)];
+console.log(JSON.stringify(data));
+
 function App() {
   const [recentSearches, setRecentSearches] = useState(DataOfRecentSearch);
   const [headerModalShouldBeClosed, setHeaderModalShouldBeClosed] =

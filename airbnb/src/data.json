@@ -1,4 +1,5 @@
-{ "1": {
+{
+  "1": {
     "pics": [
       "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/38bc8081-9415-453a-b8bf-9f4aeb146819.jpeg?im_w=1200",
       "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/9bd67185-dc83-4473-a191-9486c62aec66.jpeg?im_w=1200",
@@ -16,36 +17,15 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Aire acondicionado",
-        "value": true
-      },
-      {
-        "name": "Vista al valle",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Aire acondicionado", "value": true },
+      { "name": "Vista al valle", "value": true },
+      { "name": "Zona de trabajo", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Autonomous checking",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      },
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      }
+      { "name": "Autonomous checking", "value": true },
+      { "name": "Pets", "value": true },
+      { "name": "Reserva inmediata", "value": true }
     ],
     "location": {
       "continent": "America",
@@ -58,39 +38,16 @@
       "description": "Bienvenido a la 'MICA', microcasa de alta gama encaramada en la cima de la montaña. Sumérjase en una experiencia inmersiva en la naturaleza a solo 30 minutos del Viejo Quebec."
     },
     "availability": [
-      {
-        "date": ["2024-01-25","2024-02-14"],
-        "price": 230
-      },
-      {
-        "date": ["2024-01-29","2024-02-29"],
-        "price": 310
-      },
-      {
-        "date": ["2024-03-17","2024-04-01"],
-        "price": 330
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 370
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 350
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 350
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 400
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 365
-      }
-    ]
+      { "date": ["2024-01-25", "2024-02-14"], "price": 230 },
+      { "date": ["2024-01-29", "2024-02-29"], "price": 310 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 330 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 370 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 350 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 350 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 400 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 365 }
+    ],
+    "kind": "Casas rurales"
   },
   "2": {
     "pics": [
@@ -111,29 +68,12 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Hotel",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Parqueadero",
-        "value": true
-      },
-      {
-        "name": "Acceso a lago",
-        "value": true
-      },
-      {
-        "name": "Cocina",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Parqueadero", "value": true },
+      { "name": "Acceso a lago", "value": true },
+      { "name": "Cocina", "value": true }
     ],
-    "bookingOptions": [
-      {
-        "name": "Autonomous checking",
-        "value": true
-      }
-    ],
+    "bookingOptions": [{ "name": "Autonomous checking", "value": true }],
     "location": {
       "continent": "America",
       "country": "Colombia",
@@ -145,31 +85,14 @@
       "description": "Vive una experiencia en un lugar mágico en medio de la naturaleza, déjate llevar por su amanecer, sus infinitos verdes y los cálidos colores de su atardecer, acompañado de confort y aventura"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 20
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 20
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 22
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 22
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 25
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 27
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 20 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 20 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 22 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 22 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 25 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 27 }
+    ],
+    "kind": "Esqui"
   },
   "3": {
     "pics": [
@@ -189,28 +112,13 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Gimnasio",
-        "value": true
-      },
-      {
-        "name": "Parrilla",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Gimnasio", "value": true },
+      { "name": "Parrilla", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Asia",
@@ -223,27 +131,13 @@
       "description": "La casa del árbol de Bali está a solo 3 minutos a pie de la playa. Desde el porche puedes ver el amanecer por la mañana y disfrutar de las vistas de nuestro hermoso jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 60
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 42
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 59
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 70
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 60 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 42 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 59 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 70 }
+    ],
+    "kind": "Cabaña"
   },
   "4": {
     "pics": [
@@ -254,7 +148,7 @@
     ],
     "description": "Habitación en Brooklyn, Nueva York, Estados Unidos",
     "guestsFavorite": false,
-    "score": 5.0,
+    "score": 5,
     "numReviews": 14,
     "beds": 1,
     "rooms": 1,
@@ -264,28 +158,13 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa de huespedes",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      },
-      {
-        "name": "Cocina",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Zona de trabajo", "value": true },
+      { "name": "Cocina", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Autonomous checking",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Autonomous checking", "value": true }
     ],
     "location": {
       "continent": "America",
@@ -298,27 +177,13 @@
       "description": "Este lugar especial está cerca de todo, por lo que es fácil planificar tu visita. Nos preocupamos por cada pequeño detalle para que disfrutes de una estancia maravillosa, desde la pared de pizarra que enumera los lugares favoritos de mi vecindario, hasta bebidas y aperitivos a la llegada"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 250
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 260
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 270
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 300
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 320
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 250 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 260 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 270 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 300 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 320 }
+    ],
+    "kind": "Ciudades famosas"
   },
   "5": {
     "pics": [
@@ -338,29 +203,12 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa de huespedes",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Cocina",
-        "value": true
-      },
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Secadora",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Cocina", "value": true },
+      { "name": "Wifi", "value": true },
+      { "name": "Secadora", "value": true }
     ],
-    "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      }
-    ],
+    "bookingOptions": [{ "name": "Reserva inmediata", "value": true }],
     "location": {
       "continent": "Asia",
       "country": "India",
@@ -368,51 +216,22 @@
       "state": "Maharastra",
       "neighborhood": "Mumbai",
       "lat": 19.0712,
-      "long":  72.8762,
+      "long": 72.8762,
       "description": "Un amplio dormitorio privado en un apartamento en el piso 14 con vista a la ciudad."
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 190
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 200
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 205
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 200
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 220
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 245
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 300
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 300
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 350
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 380
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 190 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 200 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 205 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 200 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 220 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 245 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 300 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 300 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 350 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 380 }
+    ],
+    "kind": "Novedad"
   },
   "6": {
     "pics": [
@@ -432,28 +251,13 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Camaras de seguridad",
-        "value": true
-      },
-      {
-        "name": "Asensor",
-        "value": true
-      },
-      {
-        "name": "Wifi",
-        "value": true
-      }
+      { "name": "Camaras de seguridad", "value": true },
+      { "name": "Asensor", "value": true },
+      { "name": "Wifi", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Autonomous checking",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Autonomous checking", "value": true }
     ],
     "location": {
       "continent": "Europa",
@@ -461,44 +265,21 @@
       "city": "Florencia",
       "state": "Toscana",
       "neighborhood": "Duomo",
-      "lat":  43.7687,
+      "lat": 43.7687,
       "long": 11.2569,
       "description": "Habitación individual en un elegante ático con terraza y vistas impresionantes del centro histórico. A pocos pasos de la Piazza Beccaria, a 15 minutos caminando del Duomo."
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 140
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 141
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 169
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 170
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 180
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 200
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 205
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 260
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 140 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 141 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 169 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 170 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 180 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 200 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 205 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 260 }
+    ],
+    "kind": "Esqui"
   },
   "7": {
     "pics": [
@@ -518,28 +299,13 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "TV",
-        "value": true
-      },
-      {
-        "name": "Camaras de seguridad",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "TV", "value": true },
+      { "name": "Camaras de seguridad", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Europa",
@@ -552,31 +318,14 @@
       "description": "Magnífico apartamento de 65 m2  5ª planta con ascensor.con 2 dormitorios, ropa de cama de muy alta calidad de 160*200,amplio espacio de almacenamiento una sala de estar Con comedor y chimenea,dos sofás para dos camas de 1 persona"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 380
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 390
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 392
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 399
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 370
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 410
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 380 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 390 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 392 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 399 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 370 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 410 }
+    ],
+    "kind": "Casa del arbol"
   },
   "8": {
     "pics": [
@@ -596,32 +345,14 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Hotel",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Refrigerador",
-        "value": true
-      },
-      {
-        "name": "Desayuno",
-        "value": true
-      },
-      {
-        "name": "Aire acondicionado",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Refrigerador", "value": true },
+      { "name": "Desayuno", "value": true },
+      { "name": "Aire acondicionado", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Autonomous checking",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Autonomous checking", "value": true }
     ],
     "location": {
       "continent": "Asia",
@@ -634,27 +365,13 @@
       "description": "Hana House es una casa tradicional construida hace unos 100 años >> limitada a un grupo por día (1-4 personas)."
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 85
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 95
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 82
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 89
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 85 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 95 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 82 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 89 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 }
+    ],
+    "kind": "Vistas increibles"
   },
   "9": {
     "pics": [
@@ -674,32 +391,14 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Hotel",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      },
-      {
-        "name": "Lavadora",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Zona de trabajo", "value": true },
+      { "name": "Lavadora", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Autonomous checking",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Autonomous checking", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Asia",
@@ -712,27 +411,13 @@
       "description": "El lugar está bastante limpio y agradable."
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 30
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 38
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 42
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 39
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 27
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 30 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 38 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 42 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 39 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 27 }
+    ],
+    "kind": "Islas"
   },
   "10": {
     "pics": [
@@ -752,36 +437,15 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa de huespedes",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Gimnasio",
-        "value": true
-      },
-      {
-        "name": "Secadora de pelo",
-        "value": true
-      },
-      {
-        "name": "Cama King",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Gimnasio", "value": true },
+      { "name": "Secadora de pelo", "value": true },
+      { "name": "Cama King", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      },
-      {
-        "name": "Autonomous checking",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true },
+      { "name": "Autonomous checking", "value": true }
     ],
     "location": {
       "continent": "America",
@@ -794,27 +458,13 @@
       "description": "Tengo disponible para ti una habitación privada con baño dentro y para uso exclusivo; "
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 20
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 25
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 22
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 29
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 30
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 20 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 25 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 22 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 29 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 30 }
+    ],
+    "kind": "Populares"
   },
   "11": {
     "pics": [
@@ -834,28 +484,13 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa de huespedes",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "TV",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "TV", "value": true },
+      { "name": "Zona de trabajo", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Europa",
@@ -863,39 +498,26 @@
       "city": "Madrid",
       "state": "Cataluña",
       "neighborhood": "Vasco",
-      "lat":  40.4167,
+      "lat": 40.4167,
       "long": -3.70325,
       "description": "Disisfrutar de las vistas de nuestro hermoso jardín en Cataluña, come buenas tapas"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 90
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 82
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 79
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 100
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 90 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 82 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 79 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 100 }
+    ],
+    "kind": "Autosuficiente"
   },
   "12": {
     "pics": [
       "https://a0.muscache.com/im/pictures/0b50d629-6918-4602-ab36-ca3a398162b1.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/2402f9f9-00ff-4c63-a6b8-12eb8c82b704.jpg?im_w=720",
       "https://a0.muscache.com/im/pictures/miso/Hosting-723729709819063867/original/f9072de1-b720-409d-897d-e071e068fa1b.jpeg?im_w=720",
-"https://a0.muscache.com/im/pictures/miso/Hosting-723729709819063867/original/bed61597-b2ad-4947-9200-e99327b5a402.jpeg?im_w=1200"    ],
+      "https://a0.muscache.com/im/pictures/miso/Hosting-723729709819063867/original/bed61597-b2ad-4947-9200-e99327b5a402.jpeg?im_w=1200"
+    ],
     "description": "Habitación en Tromsø, Noruega",
     "guestsFavorite": true,
     "score": 4.79,
@@ -908,35 +530,15 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Hotel",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      },
-      {
-        "name": "Cama King",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Wifi", "value": true },
+      { "name": "Zona de trabajo", "value": true },
+      { "name": "Cama King", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Autonomous checking",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      },{
-        "name": "Reserva inmediata",
-        "value": true
-      }
+      { "name": "Autonomous checking", "value": true },
+      { "name": "Pets", "value": true },
+      { "name": "Reserva inmediata", "value": true }
     ],
     "location": {
       "continent": "Europa",
@@ -945,31 +547,17 @@
       "state": "Gruhuy",
       "neighborhood": "Galouy",
       "lat": 59.9138,
-      "long":10.7387,
+      "long": 10.7387,
       "description": "Este lugar tiene naturaleza al lado.  Montañas, mar, silencio, paz en invierno y verano.  A solo 40 km de la ciudad"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 60
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 60
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 62
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 69
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 70
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 60 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 60 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 62 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 69 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 70 }
+    ],
+    "kind": "Ciudades famosas"
   },
   "13": {
     "pics": [
@@ -989,32 +577,14 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Gimnasio",
-        "value": true
-      },
-      {
-        "name": "Jacuzzi",
-        "value": true
-      },
-      {
-        "name": "Cama King",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Gimnasio", "value": true },
+      { "name": "Jacuzzi", "value": true },
+      { "name": "Cama King", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Autonomous checking",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Autonomous checking", "value": true }
     ],
     "location": {
       "continent": "America",
@@ -1027,27 +597,13 @@
       "description": "Departamento EN PRIMERA LINEA DE PLAYA y con VISTA espectacular AL MAR, dos camas matrimoniales"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 95
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 92
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 89
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 70
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 95 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 92 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 89 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 70 }
+    ],
+    "kind": "Mansiones"
   },
   "14": {
     "pics": [
@@ -1067,25 +623,11 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Hotel",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Gimnasio",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Gimnasio", "value": true },
+      { "name": "Zona de trabajo", "value": true }
     ],
-    "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      }
-    ],
+    "bookingOptions": [{ "name": "Reserva inmediata", "value": true }],
     "location": {
       "continent": "America",
       "country": "Mexico",
@@ -1097,27 +639,13 @@
       "description": "Vive una magica experiencia en la playa, podras ver el amanecer por la mañana y disfrutar de las vistas de nuestro hermoso jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 60
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 42
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 59
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 60
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 60 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 42 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 59 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 60 }
+    ],
+    "kind": "Tropical"
   },
   "15": {
     "pics": [
@@ -1137,28 +665,13 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Piscina",
-        "value": true
-      },
-      {
-        "name": "TV",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Piscina", "value": true },
+      { "name": "TV", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Oceania",
@@ -1171,27 +684,13 @@
       "description": "La casa de nuestro hermoso tio es la mejor con jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 30
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 30
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 42
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 39
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 30
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 30 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 30 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 42 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 39 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 30 }
+    ],
+    "kind": "Populares"
   },
   "16": {
     "pics": [
@@ -1211,28 +710,13 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa de huespedes",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "TV",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "TV", "value": true },
+      { "name": "Zona de trabajo", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Autonomous checking",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Autonomous checking", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Oceania",
@@ -1245,27 +729,13 @@
       "description": "Disfruta las fiesta y diversion mientras trabajas en Australia"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 405
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 407
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 420
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 409
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 405 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 407 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 420 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 409 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 }
+    ],
+    "kind": "Frente al lago"
   },
   "17": {
     "pics": [
@@ -1285,28 +755,13 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Hotel",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Piscina",
-        "value": true
-      },
-      {
-        "name": "Parrilla",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Piscina", "value": true },
+      { "name": "Parrilla", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Asia",
@@ -1319,27 +774,13 @@
       "description": "La casa del árbol de Bali está a solo 3 minutos a pie de la playa. Desde el porche puedes ver el amanecer por la mañana y disfrutar de las vistas de nuestro hermoso jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 70
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 72
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 89
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 70
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 70 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 72 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 89 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 70 }
+    ],
+    "kind": "Bed and breakfast"
   },
   "18": {
     "pics": [
@@ -1359,25 +800,11 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Plancha",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Plancha", "value": true },
+      { "name": "Zona de trabajo", "value": true }
     ],
-    "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      }
-    ],
+    "bookingOptions": [{ "name": "Reserva inmediata", "value": true }],
     "location": {
       "continent": "Europa",
       "country": "Suiza",
@@ -1389,27 +816,13 @@
       "description": "El amanecer por la mañana y disfrutar de las vista a las montañas"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 100
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 130
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 122
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 119
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 110
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 100 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 130 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 122 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 119 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 110 }
+    ],
+    "kind": "Vistas increibles"
   },
   "19": {
     "pics": [
@@ -1429,28 +842,13 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Piscina",
-        "value": true
-      },
-      {
-        "name": "Desayuno",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Piscina", "value": true },
+      { "name": "Desayuno", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Oceania",
@@ -1463,27 +861,13 @@
       "description": "La casa del árbol de Bali está a solo 3 minutos a pie de la playa. Desde el porche puedes ver el amanecer por la mañana y disfrutar de las vistas de nuestro hermoso jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 120
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 180
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 120
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 159
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 170
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 120 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 180 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 120 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 159 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 170 }
+    ],
+    "kind": "Cabaña"
   },
   "20": {
     "pics": [
@@ -1503,28 +887,13 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Hotel",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Zona de trabajo",
-        "value": true
-      },
-      {
-        "name": "Camaras de seguridad",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Zona de trabajo", "value": true },
+      { "name": "Camaras de seguridad", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "America",
@@ -1533,31 +902,17 @@
       "state": "California",
       "neighborhood": "Palo Alto",
       "lat": 37.7272,
-      "long":  -123.032,
+      "long": -123.032,
       "description": "Esta habitación con patio tiene DOS camas extralargas de tamaño completo (longitud de una cama queen pero ancho de una completa)."
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 260
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 280
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 242
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 299
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 270
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 260 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 280 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 242 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 299 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 270 }
+    ],
+    "kind": "Casa del arbol"
   },
   "21": {
     "pics": [
@@ -1577,28 +932,13 @@
     "tipoAlojamiento": "Alojamiento entero",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Piscina",
-        "value": true
-      },
-      {
-        "name": "Parrilla",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Piscina", "value": true },
+      { "name": "Parrilla", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Asia",
@@ -1611,27 +951,13 @@
       "description": "La casa del árbol de Bali está a solo 3 minutos a pie de la playa. Desde el porche puedes ver el amanecer por la mañana y disfrutar de las vistas de nuestro hermoso jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 56
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 80
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 49
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 59
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 48
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 56 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 80 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 49 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 59 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 48 }
+    ],
+    "kind": "Cabaña"
   },
   "22": {
     "pics": [
@@ -1651,28 +977,13 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Wifi",
-        "value": true
-      },
-      {
-        "name": "Secadora",
-        "value": true
-      },
-      {
-        "name": "Desayuno",
-        "value": true
-      }
+      { "name": "Wifi", "value": true },
+      { "name": "Secadora", "value": true },
+      { "name": "Desayuno", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Asia",
@@ -1685,27 +996,13 @@
       "description": "La casa del árbol de Bali está a solo 3 minutos a pie de la playa. Desde el porche puedes ver el amanecer por la mañana y disfrutar de las vistas de nuestro hermoso jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 350
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 280
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 248
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 253
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 270
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 350 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 280 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 248 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 253 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 270 }
+    ],
+    "kind": "Frente al lago"
   },
   "23": {
     "pics": [
@@ -1725,32 +1022,14 @@
     "tipoAlojamiento": "Habitacion",
     "tipoPropiedad": "Casa",
     "services": [
-      {
-        "name": "Lavadora",
-        "value": true
-      },
-      {
-        "name": "Plancha",
-        "value": true
-      },
-      {
-        "name": "Cuna",
-        "value": true
-      },
-      {
-        "name": "Jacuzzi",
-        "value": true
-      }
+      { "name": "Lavadora", "value": true },
+      { "name": "Plancha", "value": true },
+      { "name": "Cuna", "value": true },
+      { "name": "Jacuzzi", "value": true }
     ],
     "bookingOptions": [
-      {
-        "name": "Reserva inmediata",
-        "value": true
-      },
-      {
-        "name": "Pets",
-        "value": true
-      }
+      { "name": "Reserva inmediata", "value": true },
+      { "name": "Pets", "value": true }
     ],
     "location": {
       "continent": "Asia",
@@ -1763,26 +1042,12 @@
       "description": "La casa del árbol de Bali está a solo 3 minutos a pie de la playa. Desde el porche puedes ver el amanecer por la mañana y disfrutar de las vistas de nuestro hermoso jardín"
     },
     "availability": [
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 460
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 380
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 452
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 356
-      },
-      {
-        "date": ["2024-03-17", "2024-04-01"],
-        "price": 255
-      }
-    ]
+      { "date": ["2024-03-17", "2024-04-01"], "price": 460 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 380 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 452 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 356 },
+      { "date": ["2024-03-17", "2024-04-01"], "price": 255 }
+    ],
+    "kind": "Casas historicas"
   }
 }
