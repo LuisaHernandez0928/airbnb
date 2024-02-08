@@ -1,7 +1,8 @@
 import styles from "./index.module.css";
-import { Title } from "../components/title";
+import { Title } from "../../components/title";
+import { Subtitle } from "../../components/subtitle";
 
-function AddAirbnb(options) {
+function AddAirbnb({options}) {
   const imagesKind = [
     "https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg",
     "https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg",
@@ -24,12 +25,25 @@ function AddAirbnb(options) {
     "https://a0.muscache.com/pictures/4d4a4eba-c7e4-43eb-9ce2-95e1d200d10e.jpg",
     "https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg",
   ];
+
+
+  const card = () => {
+    return imagesKind.map((image, index) => {
+      return (
+        <div className={styles.card} key={index}>
+          <img src={image} alt={options[index]} />
+          <Subtitle text={options[index]} typeColor={"blackSubtitle"} />
+        </div>
+      );
+    });
+  }
   return (
     <div className={styles.ownerPage}>
       <Title
         text={"Cual de estas opciones describe mejor tu espacio?"}
         cardFilter={true}
       />
+      {card}
     </div>
   );
 }
