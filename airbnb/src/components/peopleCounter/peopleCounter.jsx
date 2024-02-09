@@ -17,7 +17,7 @@ function PeopleCounter({ peopleKind, description }) {
     <div className={styles.cardContainer}>
       <div className={styles.textContainer}>
         <Title text={peopleKind} cardFilter={true} />
-        <Subtitle text={description} typeColor={"subtitleFont"} />
+        <Subtitle text={description} typeColor={false} />
       </div>
       <div className={styles.counterContainer}>
         <button onClick={() => decreaseAmount()}>

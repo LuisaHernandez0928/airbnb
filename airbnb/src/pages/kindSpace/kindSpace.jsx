@@ -1,7 +1,7 @@
 import styles from "./index.module.css";
-import { Title } from "../../components/title";
 import { Subtitle } from "../../components/subtitle";
 import { Link } from "react-router-dom";
+import { TitleFilter } from "../../components/titleFilter";
 
 function KindSpace({ options }) {
   const imagesKind = [
@@ -39,10 +39,11 @@ function KindSpace({ options }) {
   };
   return (
     <div className={styles.ownerPage}>
-      <Title
-        text={"Cual de estas opciones describe mejor tu espacio?"}
-        cardFilter={true}
-      />
+      <div>
+        <TitleFilter
+          text={"Cual de estas opciones describe mejor tu espacio?"}
+        />
+      </div>
       <div className={styles.cardContainer}> {card()}</div>
 
       <div className={styles.buttonContainer}>
