@@ -82,20 +82,22 @@ function Filters({ data, notifyModalOpened }) {
 
   const filters = (
     <div className={styles.filterLayout}>
+      
       <Header />
       <div className={styles.filterComponents}>
-        <RadioButton handleAlojamientoChanges={handleAlojamientoChanges} />
+        <RadioButton handleAlojamientoChanges={handleAlojamientoChanges} header={"Tipo de alojamiento"}/>
         <MemoizedRangePrices
           data={data}
           handlePriceChanges={handlePriceChanges}
+          header={"Rango precios"}
         />
-        <HabitacionesCamas handleHomeChanges={handleHomeChanges} />
-        <Prizes handleFavoriteChanges={handleFavoriteChanges} />
-        <Properties handlePropertyChanges={handlePropertyChanges} />
-        <Services handleServicesChanges={handleServicesChanges} />
-        <OpcionesReserva handleBookingChanges={handleBookingChanges} />
-        <Accesibility />
-        <Languages />
+        <HabitacionesCamas handleHomeChanges={handleHomeChanges} header={"Habitaciones y camas"} />
+        <Prizes handleFavoriteChanges={handleFavoriteChanges} header={"Alojamientos de primera"} />
+        <Properties handlePropertyChanges={handlePropertyChanges} header={"Tipo de propiedad"}/>
+        <Services handleServicesChanges={handleServicesChanges} header={"Servicios"} />
+        <OpcionesReserva handleBookingChanges={handleBookingChanges} header={"Opciones de reserva"}/>
+        <Accesibility header={"Prestaciones de accesibilidad"}/>
+        <Languages header={"Idioma del anfitrion"} />
       </div>
       <Footer />
     </div>

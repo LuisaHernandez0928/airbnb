@@ -5,7 +5,7 @@ import { Title } from "../title";
 import { CheckBox } from "../checkbox";
 import styles from "./index.module.css";
 
-function Services({ handleServicesChanges }) {
+function Services({ handleServicesChanges, header }) {
   const [showMore, setShowMore] = useState(false);
   const amenities = getAllSections(serviceOptions);
   const [servicesChecked, setServicesChecked] = useState([]);
@@ -45,7 +45,7 @@ function Services({ handleServicesChanges }) {
 
   return (
     <div className={styles.mainContainer}>
-      <TitleFilter text={"Servicios"} />
+      <TitleFilter text={header} />
       {showMoreSectios(amenities[0], subtitles[0])}
       <div className={showMore ? styles.sectionContainer : styles.noExtend}>
         {showMoreSectios(amenities[1], subtitles[1])}

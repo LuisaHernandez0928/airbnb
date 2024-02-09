@@ -5,7 +5,7 @@ import { Title } from "../title";
 import { CheckBox } from "../checkbox";
 import styles from "./index.module.css";
 
-function Languages() {
+function Languages({header}) {
   const [checkReport, setCheckReport] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const amenities = getAllSections(serviceOptions);
@@ -35,7 +35,7 @@ function Languages() {
 
   return (
     <div className={styles.mainContainer}>
-      <TitleFilter text={"Idioma del anfitrion"} />
+      <TitleFilter text={header} />
       {showMoreSectios(amenities[0])}
       <div className={showMore ? styles.sectionContainer : styles.noExtend}>
         {showMoreSectios(amenities[1])}

@@ -3,7 +3,7 @@ import { TitleFilter } from "../titleFilter";
 import { DescriptionFilter } from "../descriptionFilter";
 import { useState } from "react";
 
-function RadioButton({handleAlojamientoChanges}) {
+function RadioButton({handleAlojamientoChanges, header}) {
   const [buttonSelected, setButtonSelected] = useState("Cualquier tipo");
 
   const notifyButton = (e) => {
@@ -14,7 +14,7 @@ function RadioButton({handleAlojamientoChanges}) {
   return (
     <div className={styles.layoutRadioButton}>
       <div className={styles.headerText}>
-        <TitleFilter text={"Tipo de alojamiento"} />
+        <TitleFilter text={header} />
         <DescriptionFilter
           text={
             "Busca habitaciones, alojamientos enteros o cualquier tipo de espacio."

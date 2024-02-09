@@ -4,7 +4,7 @@ import { Title } from "../title";
 import { TitleFilter } from "../titleFilter";
 import styles from "./index.module.css";
 
-function Prizes({handleFavoriteChanges}) {
+function Prizes({handleFavoriteChanges,header}) {
 
   const [cardSelected, setCardSelected] =  useState(false);
 
@@ -15,7 +15,7 @@ function Prizes({handleFavoriteChanges}) {
 
   return (
     <div className={styles.prizes}>
-      <TitleFilter text={"Alojamientos de Primera"} />
+      <TitleFilter text={header} />
       <CardFilter
         text={<Title text={"Favorito entre huéspedes"} cardFilter={true} />}
         icon={

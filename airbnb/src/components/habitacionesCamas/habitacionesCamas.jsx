@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { TitleFilter } from "../titleFilter";
 import { RadioButtonSeparated } from "../radioButtonSeparated/radioButtonSeparated";
 
-function HabitacionesCamas({ handleHomeChanges }) {
+function HabitacionesCamas({ handleHomeChanges, header}) {
   const [rooms, setRooms] = useState("Cualquiera");
   const [beds, setBeds] = useState("Cualquiera");
   const [baths, setBaths] = useState("Cualquiera");
@@ -25,7 +25,7 @@ function HabitacionesCamas({ handleHomeChanges }) {
 
   return (
     <div className={styles.containerHabitacionesCamas}>
-      <TitleFilter text={"Habitacion y camas"} />
+      <TitleFilter text={header} />
       <RadioButtonSeparated
         subtitle={"Habitaciones"}
         notifyRoomChanged={notifyRoomChanged}

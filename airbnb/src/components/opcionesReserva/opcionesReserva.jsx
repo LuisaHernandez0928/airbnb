@@ -3,7 +3,7 @@ import { Toggle } from "../toggle";
 import { TitleFilter } from "../titleFilter";
 import { useState } from "react";
 
-function OpcionesReserva({ handleBookingChanges }) {
+function OpcionesReserva({ handleBookingChanges, header }) {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const bookingTitle = [
@@ -32,7 +32,7 @@ function OpcionesReserva({ handleBookingChanges }) {
 
   return (
     <div className={styles.reservasContainer}>
-      <TitleFilter text={"Opciones de reserva"} />
+      <TitleFilter text={header} />
       {bookingTitle.map((title, index) => (
         <div key={index} className={styles.bookingRow}>
           <div className={styles.bookingText}>

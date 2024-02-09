@@ -5,14 +5,14 @@ import { MultiRangeSlider } from "../priceSlider/priceSlider";
 import { TitleFilter } from "../titleFilter";
 import styles from "./index.module.css";
 
-function RangePrices({ data, handlePriceChanges }) {
+function RangePrices({ data, handlePriceChanges, header}) {
   const [min, setMin] = useState(20);
   const [max, setMax] = useState(460);
 
   return (
     <div className={styles.layoutPrices}>
       <div className={styles.headerText}>
-        <TitleFilter text={"Rango precios"} />
+        <TitleFilter text={header} />
         <DescriptionFilter
           text={"Precios por noche sin incluir impuestos y tarifas"}
         />

@@ -4,7 +4,7 @@ import { Title } from "../title";
 import { TitleFilter } from "../titleFilter";
 import styles from "./index.module.css";
 
-function Properties({ handlePropertyChanges }) {
+function Properties({ handlePropertyChanges,header }) {
   const [casa, setCasa] = useState(false);
   const [casaHuespedes, setCasaHuespedes] = useState(false);
   const [hotel, setHotel] = useState(false);
@@ -26,7 +26,7 @@ function Properties({ handlePropertyChanges }) {
 
   return (
     <div className={styles.propertiesContainer}>
-      <TitleFilter text={"Tipo de propiedad"} />
+      <TitleFilter text={header} />
       <div className={styles.propertyCardsRow}>
         <CardFilter
           text={<Title text={"Casa"} cardFilter={true} />}

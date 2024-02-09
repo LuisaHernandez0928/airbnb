@@ -5,7 +5,7 @@ import { Title } from "../title";
 import { CheckBox } from "../checkbox";
 import styles from "./index.module.css";
 
-function Accesibility() {
+function Accesibility({header}) {
   const [checkReport, setCheckReport] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const amenities = getAllSections(serviceOptions);
@@ -36,7 +36,7 @@ function Accesibility() {
 
   return (
     <div className={styles.mainContainer}>
-      <TitleFilter text={"Prestaciones de accesibilidad"} />
+      <TitleFilter text={header} />
       {showMoreSectios(amenities[0], subtitles[0])}
       <div className={showMore ? styles.sectionContainer : styles.noExtend}>
         {showMoreSectios(amenities[1], subtitles[1])}
