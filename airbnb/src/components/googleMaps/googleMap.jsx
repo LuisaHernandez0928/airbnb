@@ -1,151 +1,116 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import parse from 'autosuggest-highlight/parse';
-import { debounce } from '@mui/material/utils';
+import * as React from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
-// This key was created specifically for the demo in mui.com.
-// You need to create a new one for your application.
-const GOOGLE_MAPS_API_KEY = 'AIzaSyDmlUVrjRuQNrd_p4CVZwLuziMmgn32nIo';
+const GOOGLE_MAPS_API_KEY = "AIzaSyDmlUVrjRuQNrd_p4CVZwLuziMmgn32nIo";
 
-function loadScript(src, position, id) {
-  if (!position) {
-    return;
-  }
+const libraries = ["places"];
 
-  const script = document.createElement('script');
-  script.setAttribute('async', '');
-  script.setAttribute('id', id);
-  script.src = src;
-  position.appendChild(script);
+function geocodePlaceId(placeId, geocoder, callback) {
+  geocoder
+    .geocode({ placeId: placeId })
+    .then(({ results }) => {
+      const lat = results[0].geometry.location.lat();
+      const lng = results[0].geometry.location.lng();
+      callback({
+        status: "ok",
+        data: {
+          lat,
+          lng,
+        },
+      });
+    })
+    .catch((e) => {
+      callback({
+        status: "error",
+        msg: e,
+      });
+    });
 }
 
-const autocompleteService = { current: null };
+function GoogleMaps() {
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+    libraries,
+  });
 
-export default function GoogleMaps() {
-  const [value, setValue] = React.useState(null);
-  const [inputValue, setInputValue] = React.useState('');
-  const [options, setOptions] = React.useState([]);
-  const loaded = React.useRef(false);
+  const [center, setCenter] = React.useState({
+    lat: 7.2905715,
+    lng: 80.6337262,
+  });
 
-  if (typeof window !== 'undefined' && !loaded.current) {
-    if (!document.querySelector('#google-maps')) {
-      loadScript(
-        `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`,
-        document.querySelector('head'),
-        'google-maps',
-      );
-    }
-
-    loaded.current = true;
-  }
-
-  const fetch = React.useMemo(
-    () =>
-      debounce((request, callback) => {
-        autocompleteService.current.getPlacePredictions(request, callback);
-      }, 400),
-    [],
-  );
+  const autocompleteService = React.useRef();
+  const geocoder = React.useRef();
 
   React.useEffect(() => {
-    let active = true;
+    if (!isLoaded) return;
+    autocompleteService.current =
+      new window.google.maps.places.AutocompleteService();
+    geocoder.current = new window.google.maps.Geocoder();
+  }, [isLoaded]);
 
-    if (!autocompleteService.current && window.google) {
-      autocompleteService.current =
-        new window.google.maps.places.AutocompleteService();
-    }
-    if (!autocompleteService.current) {
-      return undefined;
-    }
-
-    if (inputValue === '') {
-      setOptions(value ? [value] : []);
-      return undefined;
+  function coordinatesRetrieved(res) {
+    if (res.status !== "ok") {
+      console.log("ERROR LEYENDO LAT LONG");
+      console.error(res.msg);
+      return;
     }
 
-    fetch({ input: inputValue }, (results) => {
-      if (active) {
-        let newOptions = [];
+    const { lat, lng } = res.data;
+    console.log(lat, lng);
+    setCenter({ lat, lng });
+  }
 
-        if (value) {
-          newOptions = [value];
-        }
-
-        if (results) {
-          newOptions = [...newOptions, ...results];
-        }
-
-        setOptions(newOptions);
+  function getAutocompletions(input) {
+    autocompleteService.current.getPlacePredictions(
+      { input },
+      function (results) {
+        console.log(results);
+        /*
+        geocodePlaceId(
+          results[0]["place_id"],
+          geocoder.current,
+          coordinatesRetrieved
+        );
+        */
       }
-    });
+    );
+  }
 
-    return () => {
-      active = false;
-    };
-  }, [value, inputValue, fetch]);
+  if (loadError) {
+    return <div>Error loading maps</div>;
+  }
+
+  if (!isLoaded) {
+    return <div>Loading maps</div>;
+  }
 
   return (
-    <Autocomplete
-      id="google-map-demo"
-      sx={{ width: 300 }}
-      getOptionLabel={(option) =>
-        typeof option === 'string' ? option : option.description
-      }
-      filterOptions={(x) => x}
-      options={options}
-      autoComplete
-      includeInputInList
-      filterSelectedOptions
-      value={value}
-      noOptionsText="No locations"
-      onChange={(event, newValue) => {
-        setOptions(newValue ? [newValue, ...options] : options);
-        setValue(newValue);
-      }}
-      onInputChange={(event, newInputValue) => {
-        setInputValue(newInputValue);
-      }}
-      renderInput={(params) => (
-        <TextField {...params} label="Add a location" fullWidth />
-      )}
-      renderOption={(props, option) => {
-        const matches =
-          option.structured_formatting.main_text_matched_substrings || [];
-
-        const parts = parse(
-          option.structured_formatting.main_text,
-          matches.map((match) => [match.offset, match.offset + match.length]),
-        );
-
-        return (
-          <li {...props}>
-            <Grid container alignItems="center">
-              <Grid item sx={{ display: 'flex', width: 44 }}>
-                <LocationOnIcon sx={{ color: 'text.secondary' }} />
-              </Grid>
-              <Grid item sx={{ width: 'calc(100% - 44px)', wordWrap: 'break-word' }}>
-                {parts.map((part, index) => (
-                  <Box
-                    key={index}
-                    component="span"
-                    sx={{ fontWeight: part.highlight ? 'bold' : 'regular' }}
-                  >
-                    {part.text}
-                  </Box>
-                ))}
-                <Typography variant="body2" color="text.secondary">
-                  {option.structured_formatting.secondary_text}
-                </Typography>
-              </Grid>
-            </Grid>
-          </li>
-        );
-      }}
-    />
+    <div style={{ height: "fit-content", width: "600px", overflow: "hidden" }}>
+      <input
+        style={{
+          border: "1px solid black",
+        }}
+        type="text"
+        onChange={(e) => {
+          const str = e.target.value;
+          getAutocompletions(str);
+        }}
+      />
+      <div>hola</div>
+      <div style={{ height: "600px", width: "600px", overflow: "hidden" }}>
+        <GoogleMap
+          zoom={5}
+          center={center}
+          mapContainerStyle={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Marker position={center} />
+        </GoogleMap>
+      </div>
+    </div>
   );
 }
+
+export { GoogleMaps };

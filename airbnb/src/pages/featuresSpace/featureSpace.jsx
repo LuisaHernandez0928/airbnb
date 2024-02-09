@@ -5,6 +5,7 @@ import { OpcionesReserva } from "../../components/opcionesReserva/opcionesReserv
 import { PeopleCounter } from "../../components/peopleCounter/peopleCounter";
 import { TitleFilter } from "../../components/titleFilter";
 import { CountrySelect } from "../../components/countrySelect/countryComponent";
+import { GoogleMaps } from "../../components/googleMaps/googleMap";
 
 function Features() {
   return (
@@ -28,6 +29,7 @@ function Features() {
           text={"Ubica tu espacio: pais,  ciudad, estado, direccion"}
         />
         <CountrySelect />
+        <GoogleMaps />
       </div>
       <HabitacionesCamas
         header={"Cuantas habitaciones, banos, camas ofreces?"}
